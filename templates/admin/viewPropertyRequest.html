@@ -1,0 +1,136 @@
+{% extends 'admin/adminLayout.html' %}
+{% load static %}
+{% block content %}
+
+<!-- District Filter -->
+<div class="mb-3 d-flex gap-2 align-items-center">
+    <label for="districtFilter" class="form-label mb-0"><strong>Filter by District:</strong></label>
+    <input type="text" id="districtFilter" class="form-control" placeholder="Search by district..."
+        style="max-width: 300px;">
+</div>
+
+<div class="table-responsive">
+    <table class="table mb-0 text-nowrap varient-table align-middle fs-3">
+        <thead>
+            <tr>
+                <th class="text-muted">Property Name</th>
+                <th class="text-muted">Location</th>
+                <th class="text-muted">Requested User</th>
+                <th class="text-muted">Bid Amount</th>
+                <th class="text-muted">Image</th>
+                <th class="text-muted text-end">Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for p in view_request %}
+            <tr class="property-row" data-district="{{ p.property_district }}">
+                <td>{{ p.property_name }}</td>
+                <td>
+                    <a href="{% url 'viewPropertyLocation' p.fk_property_id %}"
+                        class="text-decoration-none text-primary">
+                        {{ p.property_loc }}, {{ p.property_district }}
+                    </a>
+                </td>
+                <td>
+                    <strong>{{ p.full_name }}</strong><br>
+                    <small class="text-muted">{{ p.phone_number }}</small>
+                </td>
+
+                <td>
+                    {% if p.bid_amount %}
+                    <strong>₹{{ p.bid_amount }}</strong>
+                    {% else %}
+                    <span class="text-muted">No Bid</span>
+                    {% endif %}
+                </td>
+
+                <td>
+                    {% if p.property_image %}
+                    <img src="{% get_media_prefix %}/{{ p.property_image }}" width="150" height="120"
+                        style="object-fit:cover; border-radius:6px;">
+                    {% else %}
+                    <span class="text-muted">No Image</span>
+                    {% endif %}
+                </td>
+
+                <td class="text-end">
+                    <a class="btn btn-sm btn-primary" href="{% url 'request_details' p.fk_property_id %}">
+                        View
+                    </a>
+
+                    {% if p.broker_name %}
+                    <span class="badge bg-success">Assigned: {{ p.broker_name }}</span>
+                    {% else %}
+                    <a class="btn btn-sm btn-primary" href="{% url 'assignBroker' p.fk_property_id %}">
+                        Assign Broker
+                    </a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center text-muted">
+                    No properties found
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% if view_request.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1">&laquo; First</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ view_request.previous_page_number }}">Previous</a>
+            </li>
+            {% endif %}
+
+            <li class="page-item disabled">
+                <span class="page-link">
+                    Page {{ view_request.number }} of {{ view_request.paginator.num_pages }}
+                </span>
+            </li>
+
+            {% if view_request.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ view_request.next_page_number }}">Next</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ view_request.paginator.num_pages }}">Last &raquo;</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+
+<script>
+    document.getElementById('districtFilter').addEventListener('keyup', function () {
+        const searchTerm = this.value.toLowerCase().trim();
+        const propertyRows = document.querySelectorAll('.property-row');
+        let visibleCount = 0;
+
+        propertyRows.forEach(row => {
+            const district = row.getAttribute('data-district').toLowerCase();
+            if (searchTerm === '' || district.includes(searchTerm)) {
+                row.style.display = 'table-row';
+                visibleCount++;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        // Show "No properties" message if none match
+        const tbody = document.querySelector('table tbody');
+        const noPropertiesRow = Array.from(tbody.querySelectorAll('tr')).find(row => row.textContent.includes('No properties found'));
+        if (noPropertiesRow) {
+            noPropertiesRow.style.display = visibleCount === 0 ? 'table-row' : 'none';
+        }
+    });
+</script>
+
+{% endblock %}

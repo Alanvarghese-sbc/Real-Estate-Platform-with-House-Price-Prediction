@@ -1,0 +1,24 @@
+{% extends 'user/userLayout.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<h4>Upload Profile Image</h4>
+
+<form method="post" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<input type="file" name="profile_image" required
+class="form-control mb-3">
+
+<button class="btn btn-primary">
+Upload
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

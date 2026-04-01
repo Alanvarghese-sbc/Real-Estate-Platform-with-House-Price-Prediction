@@ -1,0 +1,290 @@
+{% extends 'admin/adminLayout.html' %}
+{% block content %}
+
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Top Statistics Cards -->
+<div class="row mb-4">
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100 shadow-sm border-0 hover-lift">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="bg-light-primary rounded-circle p-3 d-flex align-items-center justify-content-center"
+              style="width: 50px; height: 50px;">
+              <i class="ti ti-users fs-6 text-primary"></i>
+            </div>
+            <div class="ms-3">
+              <h5 class="fw-bold mb-1 fs-4">{{ total_users }}</h5>
+              <p class="mb-0 text-muted fs-3">Total Users</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100 shadow-sm border-0 hover-lift">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="bg-light-success rounded-circle p-3 d-flex align-items-center justify-content-center"
+              style="width: 50px; height: 50px;">
+              <i class="ti ti-home fs-6 text-success"></i>
+            </div>
+            <div class="ms-3">
+              <h5 class="fw-bold mb-1 fs-4">{{ total_properties }}</h5>
+              <p class="mb-0 text-muted fs-3">Active Properties</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100 shadow-sm border-0 hover-lift">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="bg-light-warning rounded-circle p-3 d-flex align-items-center justify-content-center"
+              style="width: 50px; height: 50px;">
+              <i class="ti ti-briefcase fs-6 text-warning"></i>
+            </div>
+            <div class="ms-3">
+              <h5 class="fw-bold mb-1 fs-4">{{ total_brokers }}</h5>
+              <p class="mb-0 text-muted fs-3">Verified Brokers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100 shadow-sm border-0 hover-lift">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="bg-light-danger rounded-circle p-3 d-flex align-items-center justify-content-center"
+              style="width: 50px; height: 50px;">
+              <i class="ti ti-file-description fs-6 text-danger"></i>
+            </div>
+            <div class="ms-3">
+              <h5 class="fw-bold mb-1 fs-4">{{ total_requests }}</h5>
+              <p class="mb-0 text-muted fs-3">Property Requests</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Analytics Charts -->
+<div class="row">
+    <!-- Revenue Line Chart -->
+    <div class="col-12 mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white pb-0 border-0 pt-4 px-4 d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="card-title fw-bold mb-0">Platform Growth (Commission Revenue)</h5>
+                    <small class="text-muted">Total broker commissions generated per month</small>
+                </div>
+            </div>
+            <div class="card-body">
+                <div style="height: 350px;">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- District Pie Chart -->
+    <div class="col-lg-5 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-header bg-white pb-0 border-0 pt-4 px-4">
+                <h5 class="card-title fw-bold mb-0">Properties by District</h5>
+                <small class="text-muted">Regional dominance</small>
+            </div>
+            <div class="card-body d-flex justify-content-center align-items-center">
+                <div style="height: 300px; width: 100%;">
+                    <canvas id="districtChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- AI Price Variance Bar Chart -->
+    <div class="col-lg-7 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-header bg-white pb-0 border-0 pt-4 px-4 d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="card-title fw-bold mb-0 text-primary">AI Market Estimate vs Listed Prices</h5>
+                    <small class="text-muted">Analyzing Machine Learning accuracy across districts</small>
+                </div>
+                <div class="bg-light-primary rounded-circle p-2 px-3 text-primary fw-bold" title="Machine Learning Accuracy Engine">
+                    <i class="ti ti-brain"></i> AI
+                </div>
+            </div>
+            <div class="card-body">
+                <div style="height: 300px;">
+                    <canvas id="varianceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-lift {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+    }
+</style>
+
+<script>
+    // Safely parse JSON data from Django backend
+    const chartDistricts = JSON.parse('{{ chart_districts|safe }}' || '[]');
+    const chartDistrictCounts = JSON.parse('{{ chart_district_counts|safe }}' || '[]');
+    
+    const varianceDistricts = JSON.parse('{{ variance_districts|safe }}' || '[]');
+    const varianceListed = JSON.parse('{{ variance_listed|safe }}' || '[]');
+    const varianceAI = JSON.parse('{{ variance_ai|safe }}' || '[]');
+    
+    const revenueMonths = JSON.parse('{{ revenue_months|safe }}' || '[]');
+    const revenueValues = JSON.parse('{{ revenue_values|safe }}' || '[]');
+
+    // Common Chart Defaults
+    Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
+    Chart.defaults.color = "#a1aab2";
+
+    // 1. Revenue Line Chart Configuration
+    new Chart(document.getElementById('revenueChart'), {
+        type: 'line',
+        data: {
+            labels: revenueMonths.length > 0 ? revenueMonths : ['Jan', 'Feb', 'Mar'],
+            datasets: [{
+                label: 'Total Platform Commissions (₹)',
+                data: revenueValues.length > 0 ? revenueValues : [0, 0, 0],
+                borderColor: '#13deb9',  // Success theme color
+                backgroundColor: 'rgba(19, 222, 185, 0.15)', // Light success fill
+                borderWidth: 3,
+                pointBackgroundColor: '#13deb9',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                pointRadius: 5,
+                fill: true,
+                tension: 0.4 // Smooth curves
+            }]
+        },
+        options: { 
+            responsive: true, 
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    backgroundColor: '#2a3547',
+                    titleFont: { size: 14 },
+                    bodyFont: { size: 13 },
+                    callbacks: {
+                        label: function(context) {
+                            return ' ₹ ' + context.parsed.y.toLocaleString('en-IN');
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: { color: 'rgba(0,0,0,0.05)' }
+                },
+                x: {
+                    grid: { display: false }
+                }
+            }
+        }
+    });
+
+    // 2. District Doughnut Chart Configuration
+    new Chart(document.getElementById('districtChart'), {
+        type: 'doughnut',
+        data: {
+            labels: chartDistricts.length > 0 ? chartDistricts : ['No Data'],
+            datasets: [{
+                data: chartDistrictCounts.length > 0 ? chartDistrictCounts : [1],
+                backgroundColor: [
+                    '#5d87ff', // Primary
+                    '#49beff', // Info
+                    '#13deb9', // Success
+                    '#ffae1f', // Warning
+                    '#fa896b'  // Danger
+                ],
+                borderWidth: 0,
+                hoverOffset: 5
+            }]
+        },
+        options: { 
+            responsive: true, 
+            maintainAspectRatio: false,
+            cutout: '70%',
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true,
+                        pointStyle: 'circle'
+                    }
+                }
+            }
+        }
+    });
+
+    // 3. AI vs Market Variance Chart Configuration
+    new Chart(document.getElementById('varianceChart'), {
+        type: 'bar',
+        data: {
+            labels: varianceDistricts.length > 0 ? varianceDistricts : ['No Data Available'],
+            datasets: [
+                {
+                    label: 'Avg Initial Listed Price (User)',
+                    data: varianceListed.length > 0 ? varianceListed : [0],
+                    backgroundColor: '#5d87ff', // Primary blue
+                    borderRadius: 4
+                },
+                {
+                    label: 'Avg AI Market Estimate (Engine)',
+                    data: varianceAI.length > 0 ? varianceAI : [0],
+                    backgroundColor: '#13deb9', // Success green
+                    borderRadius: 4
+                }
+            ]
+        },
+        options: { 
+            responsive: true, 
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: { usePointStyle: true, boxWidth: 10 }
+                },
+                tooltip: {
+                    backgroundColor: '#2a3547',
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ₹ ' + context.parsed.y.toLocaleString('en-IN');
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: { color: 'rgba(0,0,0,0.05)' }
+                },
+                x: {
+                    grid: { display: false }
+                }
+            }
+        }
+    });
+</script>
+
+{% endblock %}

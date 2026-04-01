@@ -1,0 +1,229 @@
+{% extends 'user/userLayout.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Search/Filter Section -->
+{% comment %} <div>
+  <div class="col-12">
+    <div class="card shadow-sm border-0 p-3">
+      <form method="GET" action="{% url 'browseProperty' %}" class="row g-3 align-items-end">
+        <div class="col-md-4">
+          <label for="district" class="form-label fw-bold">Search by District</label>
+          <select name="district" id="district" class="form-select">
+            <option value="">All Districts</option>
+            {% for d in districts %}
+            <option value="{{ d.district }}" {% if selected_district==d.district %}selected{% endif %}>
+              {{ d.district }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary w-100">Search</button>
+        </div>
+        {% if selected_district %}
+        <div class="col-md-2">
+          <a href="{% url 'browseProperty' %}" class="btn btn-outline-secondary w-100">Clear</a>
+        </div>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div> {% endcomment %}
+<div class="mb-5">
+
+  <div class="card shadow-sm border-0 mb-4">
+    <div class="card-body">
+
+      <h6 class="fw-bold mb-3">
+        <i class="ti ti-filter me-1"></i> Filter Properties
+      </h6>
+      
+      <form method="GET" action="{% url 'browseProperty' %}" class="row g-2 align-items-end">
+        
+        <!-- District Filter -->
+        <div class="col-md-4">
+          <label class="form-label text-muted small mb-1">District</label>
+          <select name="district" class="form-select">
+            <option value="">All Districts</option>
+            {% for d in districts %}
+            <option value="{{ d.district }}" {% if selected_district == d.district %}selected{% endif %}>
+              {{ d.district }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <!-- Status Filter -->
+        <div class="col-md-4">
+          <label class="form-label text-muted small mb-1">Status</label>
+          <select name="status" class="form-select">
+            <option value="">All Status</option>
+            <option value="Available" {% if selected_status == "Available" %}selected{% endif %}>Available</option>
+            <option value="Sold" {% if selected_status == "Sold" %}selected{% endif %}>Sold</option>
+          </select>
+        </div>
+
+        <!-- Buttons -->
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary w-100">Search</button>
+        </div>
+        <div class="col-md-2">
+          <a href="{% url 'browseProperty' %}" class="btn btn-outline-secondary w-100">Clear</a>
+        </div>
+        
+      </form>
+
+    </div>
+  </div>
+
+
+<div class="row">
+  
+  {% for p in properties %}
+  {% comment %} <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+    <div class="card h-100 shadow-sm border-0">
+      
+    <!-- Property Image -->
+    <div style="height:180px; overflow:hidden;">
+      {% if p.property_image %}
+      <img src="{% get_media_prefix%}/{{ p.property_image }}" class="card-img-top"
+      style="height:100%; object-fit:cover;">
+      {% else %}
+      <img src="{% static 'images/no-image.png' %}" class="card-img-top" style="height:100%; object-fit:cover;">
+      {% endif %}
+      </div>
+      
+      <!-- Card Body -->
+      <div class="card-body p-3">
+        
+      <!-- Price -->
+      <h5 class="text-success fw-bold mb-1">
+        ₹ {{ p.price_listed|intcomma }}
+        </h5>
+        
+        <!-- Property Name -->
+        <p class="mb-1 fw-semibold text-dark">
+          {{ p.property_name|truncatechars:30 }}
+          </p>
+
+        <!-- Location -->
+        <small class="text-muted">
+          {{ p.property_loc }}, {{ p.property_district }}
+          </small>
+          
+          <!-- Details -->
+          <div class="d-flex justify-content-between mt-2">
+            <small class="text-muted">
+              🛏 {{ p.no_of_bed_rooms }} Beds
+              </small>
+              <small class="text-muted">
+                📐 {{ p.property_area }} sq.ft
+                </small>
+                </div>
+                
+                </div>
+                
+                <!-- Footer -->
+                <div class="card-footer bg-white border-0 pt-0 px-3 pb-3">
+                  <div class="d-flex justify-content-between align-items-center">
+                    
+                  <span class="badge bg-secondary-subtle text-muted">
+                    {{ p.property_status }}
+                    </span>
+                    
+                    <a href="{% url 'viewPropertyDetails' p.property_id %}" class="btn btn-sm btn-outline-primary">
+                      View
+                      </a>
+                      
+                      </div>
+                      </div>
+                      
+                      </div>
+                      </div> {% endcomment %}
+                      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        
+                        <div class="card shadow-sm border-0 h-100 d-flex flex-column">
+                          
+                          <!-- Image -->
+                          <div style="height:180px; overflow:hidden;">
+                            {% if p.property_image %}
+      <img src="{% get_media_prefix %}/{{ p.property_image }}"
+      class="card-img-top"
+      style="height:100%; object-fit:cover;">
+      {% else %}
+      <img src="{% static 'images/no-image.png' %}"
+      class="card-img-top"
+      style="height:100%; object-fit:cover;">
+      {% endif %}
+    </div>
+    
+    <!-- Body -->
+    <div class="card-body p-3 flex-grow-1 d-flex flex-column">
+      
+      <!-- Price -->
+      <h5 class="text-success fw-bold mb-1">
+        ₹ {{ p.price_listed|intcomma }}
+      </h5>
+      
+      <!-- AI Deal Status -->
+      {% if p.deal_status %}
+      <div class="mb-2">
+        <span class="badge bg-{{ p.deal_status.color }}">{{ p.deal_status.text }}</span>
+      </div>
+      {% endif %}
+      
+      <!-- Name -->
+      <p class="mb-1 fw-semibold text-dark">
+        {{ p.property_name|truncatechars:30 }}
+      </p>
+
+      <!-- Location -->
+      <small class="text-muted mb-2">
+        {{ p.property_loc }}, {{ p.property_district }}
+      </small>
+      
+      <!-- Details -->
+      <div class="d-flex justify-content-between mb-2">
+        <small class="text-muted">
+          🛏 {{ p.no_of_bed_rooms }} Beds
+        </small>
+        <small class="text-muted">
+          📐 {{ p.property_area }} sq.ft
+        </small>
+      </div>
+      
+      <!-- Push footer down -->
+      <div class="mt-auto d-flex justify-content-between align-items-center">
+        
+        <span class="badge bg-secondary-subtle text-muted">
+          {{ p.property_status }}
+        </span>
+        
+        <a href="{% url 'viewPropertyDetails' p.property_id %}"
+        class="btn btn-sm btn-outline-primary">
+        View
+      </a>
+      
+    </div>
+    
+  </div>
+  
+</div>
+
+</div>
+{% empty %}
+<div class="col-12 text-center text-muted">
+  No properties available
+</div>
+{% endfor %}
+
+</div>
+
+</div>
+
+{% endblock %}

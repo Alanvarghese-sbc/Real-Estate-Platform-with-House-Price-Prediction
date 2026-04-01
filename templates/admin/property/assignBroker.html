@@ -1,0 +1,202 @@
+{% extends 'admin/adminLayout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid mt-3">
+
+  <div class="row">
+
+    <!-- LEFT SIDE : PROPERTY & ASSIGNED BROKER -->
+    <div class="col-lg-5">
+
+      <!-- Property Details -->
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-light fw-semibold">
+          Property Details
+        </div>
+        <input type="hidden" name="pid" value="{{ property.property_id }}">
+        <div class="card-body">
+          <h6 class="fw-bold">{{ property.property_name }}</h6>
+          <p class="mb-1 text-muted">
+            {{ property.property_loc }}, {{ property.property_district }}
+          </p>
+
+          <p class="mb-1">₹ {{ property.price_listed }}</p>
+          <p class="mb-0 text-muted">
+            🛏 {{ property.no_of_bed_rooms }} Beds ·
+            📐 {{ property.property_area }} sq.ft
+          </p>
+        </div>
+      </div>
+
+      <!-- Assigned Broker -->
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-light fw-semibold">
+          Assigned Broker
+        </div>
+
+        <div class="card-body">
+
+          {% if assigned %}
+          <div class="d-flex align-items-center">
+            <img src="" class="rounded-circle me-3" width="55" height="55">
+
+            <div>
+              <h6 class="mb-0">{{ assigned_broker.broker_name}}</h6>
+              <small class="text-muted"> 📞 {{ assigned_broker.broker_phone }}</small><br>
+              <small class="text-muted">{{ assigned_broker.broker_email }}</small>
+            </div>
+          </div>
+          {% else %}
+          <p class="text-muted mb-0">No broker assigned</p>
+          {% endif %}
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE : BROKER LIST -->
+    <div class="col-lg-7">
+
+      <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-light fw-semibold d-flex justify-content-between">
+          <span>Select Broker</span>
+
+
+          <!-- District Filter -->
+          <form method="get">
+            <select name="district" class="form-select form-select-sm">
+              <option value="{{district}}" selected>{{district}}</option>
+            </select>
+          </form>
+        </div>
+
+        <div class="card-body p-0">
+
+          <table class="table table-hover mb-0 align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Broker</th>
+                <th>District</th>
+                <th class="text-end">Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for broker in bdata %}
+              <tr>
+                <td>
+                  <strong>{{ broker.broker_name }}</strong><br>
+                  <small class="text-muted">{{ broker.broker_phone }}</small>
+                </td>
+
+                <td>{{ broker.broker_district }}</td>
+
+                <td class="text-end">
+                  {% if assigned %}
+                  {% if assigned.fk_broker_id == broker.broker_id %}
+                  <!-- Already assigned broker -->
+                  <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#editBrokerModal">
+                    Assigned – Edit
+                  </button>
+
+                  {% else %}
+                  <!-- Other brokers -->
+                  <button class="btn btn-sm btn-secondary" disabled>
+                    Locked
+                  </button>
+                  {% endif %}
+                  {% else %}
+                  <!-- No broker assigned yet -->
+                  <form method="post" action="{% url 'assignBrokerTOProperty' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="bid" value="{{ broker.broker_id }}">
+                    <input type="hidden" name="pid" value="{{ property.property_id }}">
+
+                    <button class="btn btn-sm btn-primary">
+                      Assign
+                    </button>
+                  </form>
+                  {% endif %}
+                </td>
+              </tr>
+              {% empty %}
+              <tr>
+                <td colspan="3" class="text-center text-muted py-3">
+                  No brokers found
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Edit Broker Modal -->
+<div class="modal fade" id="editBrokerModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Assigned Broker</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- CURRENT BROKER -->
+        <div class="mb-3 p-3 border rounded bg-light">
+          <h6 class="mb-1">Currently Assigned</h6>
+          <strong>{{ assigned_broker.broker_name }}</strong><br>
+          <small>{{ assigned_broker.broker_phone }}</small><br>
+          <small>{{ assigned_broker.broker_district }}</small>
+        </div>
+
+        <!-- ASSIGN NEW -->
+        <form method="post" action="{% url 'replaceBrokerForProperty' %}">
+          {% csrf_token %}
+          <input type="hidden" name="pid" value="{{ property.property_id }}">
+
+          <label class="fw-semibold mb-1">Assign New Broker</label>
+          <select name="bid" class="form-select mb-3">
+            {% for broker in bdata %}
+            <option value="{{ broker.broker_id }}">
+              {{ broker.broker_name }} ({{ broker.broker_district }})
+            </option>
+            {% endfor %}
+          </select>
+
+          <button class="btn btn-primary">
+            Assign New Broker
+          </button>
+        </form>
+
+        <hr>
+
+        <!-- DEASSIGN -->
+        <form method="post" action="{% url 'deAssignBroker' %}">
+          {% csrf_token %}
+          <input type="hidden" name="pid" value="{{ property.property_id }}">
+          <button class="btn btn-danger">
+            De-assign Broker
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

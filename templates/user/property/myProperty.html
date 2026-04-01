@@ -1,0 +1,110 @@
+{% extends 'user/userLayout.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+  <div class="mt-4">
+    <div class="row">
+      {% for p in properties %}
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <!-- Property Image -->
+            <div style="height:180px; overflow:hidden;">
+              {% if p.property_image %}
+                <img src="{% get_media_prefix %}/{{ p.property_image }}" class="card-img-top" style="height:100%; object-fit:cover;" />
+              {% else %}
+                <img src="{% static 'images/no-image.png' %}" class="card-img-top" style="height:100%; object-fit:cover;" />
+              {% endif %}
+            </div>
+
+            <div class="card-body p-3">
+              <h5 class="text-success fw-bold mb-1">₹ {{ p.price_listed|intcomma }}</h5>
+              {% if p.price_predicted %}
+              <div class="mb-2">
+                <span class="badge border border-info text-info">🤖 AI Estimate: ₹ {{ p.price_predicted|floatformat:0|intcomma }}</span>
+              </div>
+              {% endif %}
+              <p class="mb-1 fw-semibold text-dark">{{ p.property_name|truncatechars:30 }}</p>
+
+              <small class="text-muted">{{ p.property_loc }}, {{ p.property_district }}</small>
+
+              <div class="d-flex justify-content-between mt-2">
+                <small class="text-muted">🛏 {{ p.no_of_bed_rooms }} Beds</small>
+                <small class="text-muted">📐 {{ p.property_area }} sq.ft</small>
+              </div>
+            </div>
+
+            <div class="card-footer bg-white border-0 pt-0 px-3 pb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-secondary-subtle text-muted">{{ p.property_status }}</span>
+
+                <div>
+                  <a href="{% url 'editProperty' p.property_id %}" class="btn btn-sm btn-success">Edit</a>
+
+                  <a href="{% url 'deleteProperty' p.property_id %}" class="btn btn-sm btn-danger">Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <div class="col-12 text-center text-muted">No properties available</div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+
+{% comment %} {% extends 'user/userLayout.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+  <div class="container-fluid mt-4">
+    <div class="row">
+      {% for p in properties %}
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <!-- Property Image -->
+            <div style="height:180px; overflow:hidden;">
+              {% if p.property_image %}
+                <img src="{% get_media_prefix %}/{{ p.property_image }}" class="card-img-top" style="height:100%; object-fit:cover;" />
+              {% else %}
+                <img src="{% static 'images/no-image.png' %}" class="card-img-top" style="height:100%; object-fit:cover;" />
+              {% endif %}
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body p-3">
+              <!-- Price -->
+              <h5 class="text-success fw-bold mb-1">₹ {{ p.price_listed|intcomma }}</h5>
+
+              <!-- Property Name -->
+              <p class="mb-1 fw-semibold text-dark">{{ p.property_name|truncatechars:30 }}</p>
+
+              <!-- Location -->
+              <small class="text-muted">{{ p.property_loc }}, {{ p.property_district }}</small>
+
+              <!-- Details -->
+              <div class="d-flex justify-content-between mt-2">
+                <small class="text-muted">🛏 {{ p.no_of_bed_rooms }} Beds</small>
+                <small class="text-muted">📐 {{ p.property_area }} sq.ft</small>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="card-footer bg-white border-0 pt-0 px-3 pb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-secondary-subtle text-muted">{{ p.property_status }}</span>
+
+                <a href="{% url 'editProperty' p.property_id %}" class="btn btn-sm btn-outline-primary btn-success">Edit</a>
+                <a href="{% url 'deleteProperty' p.property_id %}" class="btn btn-sm btn-outline-primary btn-danger">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <div class="col-12 text-center text-muted">No properties available</div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %} {% endcomment %}

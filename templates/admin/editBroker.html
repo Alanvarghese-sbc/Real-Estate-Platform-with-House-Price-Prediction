@@ -1,0 +1,89 @@
+{% extends 'admin/adminLayout.html' %}
+{% block content %}
+<div class="col-lg-6">
+  <div class="table-responsive">
+    <form method="post" action="{% url 'updateBroker' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      <table class="table mb-0 text-nowrap varient-table align-middle fs-3">
+        <thead>
+          <tr>
+            <th colspan="4" class="fw-bold">Add / Edit Broker</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <input type="hidden" name="bid" value="{{ blist.broker_id }}">
+            <td><strong>Name</strong></td>
+            <td colspan="3">
+              <input type="text" name="name" value="{{blist.broker_name}}" class="form-control"pattern="^[A-Za-z\s.'-]{2,50}$" maxlength="50" title="Enter 2-50 letters, spaces, apostrophes, dots or hyphens" required>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Email</strong></td>
+            <td colspan="3">
+              <input type="email" name="email" value="{{blist.broker_email}}" class="form-control" readonly pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$" title="Enter a valid email address" required>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Gender</strong></td>
+            <td colspan="3">
+              <select name="gender" class="form-control">
+                <option value="">Select</option>
+                <option value="Male" {% if blist.broker_gender == 'Male' %} selected {% endif %}>Male</option>
+                <option value="Female" {% if blist.broker_gender == 'Female' %} selected {% endif %}>Female</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Phone</strong></td>
+            <td colspan="3">
+              <input type="text" name="phone" value="{{blist.broker_phone}}" pattern="^[6-9][0-9]{9}$" inputmode="numeric" maxlength="10" title="Enter a 10-digit phone number starting with 6, 7, 8, or 9" required class="form-control">
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>District</strong></td>
+            <td colspan="3">
+              <select name="district" class="form-control" required>
+                <option>Select District</option>
+                {% for d in districts %}
+                  <option value="{{ d.district }}" {% if d.district == blist.broker_district %}selected{% endif %}>{{ d.district }}</option>
+                {% endfor %}
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Profile Image</strong></td>
+            <td colspan="3">
+              {% if blist.profile_image %}
+                <div class="mb-2">
+                  <img src="/media/broker_profile_images/{{ blist.profile_image }}" alt="Current Image" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
+                </div>
+              {% endif %}
+              <input type="file" name="profile_image" class="form-control" accept="image/*">
+              <small class="text-muted">Leave blank to keep the current image.</small>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td class="text-end" colspan="3">
+              <button class="btn btn-success me-2" type="submit">Save</button>
+              <button class="btn btn-danger" type="reset">Cancel</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}

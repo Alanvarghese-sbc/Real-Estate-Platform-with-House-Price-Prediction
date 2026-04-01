@@ -1,0 +1,68 @@
+{% extends 'user/userLayout.html' %}
+{% block content %}
+<div class="col-lg-6">
+  <div class="table-responsive">
+    <form method="post" action="{% url 'updateUserProfile' %}">
+      {% csrf_token %}
+      <table class="table mb-0 text-nowrap varient-table align-middle fs-3">
+        <thead>
+          <tr>
+            <th colspan="4" class="fw-bold">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <input type="hidden" name="uid" value={{ulist.user_id}}>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td colspan="3">
+              <input type="text" name="name" value={{ulist.full_name}} class="form-control">
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Email</strong></td>
+            <td colspan="3">
+              <input type="email" name="email" value={{ulist.email}} class="form-control" readonly>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td><strong>Phone</strong></td>
+            <td colspan="3">
+              <input type="text" name="phone" value={{ulist.phone_number}} class="form-control">
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Address</strong></td>
+            <td colspan="3">
+              <input type="text" name="address" value = {{ulist.address}} class="form-control">
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Location</strong></td>
+            <td colspan="3">
+              <input type="text" name="location" value = {{ulist.location}} class="form-control">
+            </td>
+          </tr>
+
+
+          <tr>
+            <td></td>
+            <td class="text-end" colspan="3">
+              <button class="btn btn-success me-2" type="submit">Update</button>
+              <button class="btn btn-danger" type="reset">Cancel</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+
+</div>
+{% endblock %}

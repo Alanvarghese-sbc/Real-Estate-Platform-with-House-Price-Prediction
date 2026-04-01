@@ -1,0 +1,1001 @@
+District,Location,Area,Bedrooms,Price
+Wayanad,Near Highway,1644,6,7350174
+Kozhikode,Beach Road,1008,6,5889034
+Wayanad,Residential Area,2297,4,8444713
+Idukki,Suburbs,1885,5,6730907
+Thrissur,Viyyur,3618,2,14178740
+Kottayam,Nagampadam,3310,4,12718885
+Pathanamthitta,Suburbs,4138,6,14541607
+Alappuzha,Suburbs,1282,3,3842729
+Pathanamthitta,Near Highway,3272,6,9951967
+Kannur,Suburbs,4006,4,12620033
+Trivandrum,Kowdiar,3059,1,12149093
+Wayanad,Residential Area,1277,1,3280426
+Trivandrum,Kazhakkoottam,3002,2,13394855
+Thrissur,Swaraj Round,2378,6,10972318
+Idukki,Residential Area,3919,5,11295084
+Ernakulam,Palarivattom,4292,6,21798742
+Palakkad,Near Highway,2306,3,6630437
+Wayanad,Near Highway,2328,3,7024412
+Kottayam,Nagampadam,3520,4,14665785
+Kozhikode,Nadakkavu,635,4,4006514
+Pathanamthitta,Rural Area,4751,3,14410975
+Kannur,Residential Area,3775,3,12991522
+Palakkad,Rural Area,1394,6,5929318
+Kozhikode,Mananchira,2534,2,10367668
+Wayanad,Near Highway,2711,3,8514530
+Kozhikode,Mananchira,1367,1,5565652
+Kottayam,Kanjikuzhy,1639,6,7697853
+Wayanad,Rural Area,1833,1,5727443
+Alappuzha,Town Center,1603,5,6553445
+Kannur,Rural Area,3713,1,10654673
+Alappuzha,Town Center,1657,3,6372828
+Trivandrum,Technopark,2905,3,13435648
+Kollam,Near Highway,4248,6,14516660
+Wayanad,Town Center,4074,1,14078951
+Kottayam,Kanjikuzhy,4322,2,17500852
+Wayanad,Rural Area,3086,1,9020918
+Kasargod,Suburbs,4543,6,13801449
+Trivandrum,Vellayambalam,684,3,3727069
+Trivandrum,Vellayambalam,3222,6,15602399
+Malappuram,Town Center,808,2,3226149
+Trivandrum,Technopark,3683,4,17613641
+Palakkad,Town Center,3685,6,11192742
+Pathanamthitta,Near Highway,4676,3,16610617
+Ernakulam,Kochi,3558,6,19051384
+Thrissur,Viyyur,4611,3,18046739
+Kasargod,Rural Area,3801,1,12721000
+Trivandrum,Vellayambalam,2856,6,15368926
+Trivandrum,Vellayambalam,4319,6,19498976
+Kottayam,Pala,869,4,4301247
+Kozhikode,Nadakkavu,697,4,3538407
+Kannur,Suburbs,2923,3,9131756
+Thrissur,Poonkunnam,4631,5,21241696
+Kozhikode,Nadakkavu,1505,2,6346800
+Alappuzha,Town Center,1323,2,4586973
+Thrissur,Ayyanthole,740,3,3628604
+Kasargod,Residential Area,1775,5,6657231
+Trivandrum,Vellayambalam,3761,5,20454300
+Kottayam,Ettumanoor,2790,3,9519630
+Ernakulam,Kakkanad,1772,4,9235956
+Pathanamthitta,Suburbs,1455,1,4705483
+Palakkad,Residential Area,3850,1,11886510
+Thrissur,Poonkunnam,2198,6,10865030
+Malappuram,Residential Area,3042,5,11329552
+Malappuram,Near Highway,1105,1,2815668
+Trivandrum,Kazhakkoottam,3924,5,17024312
+Malappuram,Town Center,4507,5,14070209
+Kottayam,Baker Junction,2362,5,9430229
+Alappuzha,Near Highway,3489,3,12274105
+Idukki,Residential Area,1883,1,6073403
+Palakkad,Residential Area,3396,6,9966248
+Wayanad,Near Highway,3863,3,13963499
+Kozhikode,Mananchira,1505,1,6120986
+Idukki,Rural Area,1150,3,3992993
+Alappuzha,Suburbs,1002,6,3979257
+Kasargod,Suburbs,3027,2,9349756
+Thrissur,Swaraj Round,977,2,3703388
+Kozhikode,Beach Road,3939,2,15387104
+Kannur,Town Center,1299,6,6130632
+Idukki,Rural Area,2209,6,8506817
+Kollam,Rural Area,3500,6,12003596
+Kottayam,Nagampadam,4310,4,14993400
+Kozhikode,West Hill,3379,6,13973428
+Wayanad,Town Center,1989,1,5952110
+Kasargod,Near Highway,3857,2,11180931
+Kozhikode,Nadakkavu,2399,3,9190265
+Thrissur,Ayyanthole,835,2,3425454
+Kottayam,Kanjikuzhy,2464,5,9874612
+Kannur,Residential Area,2487,3,7980547
+Kannur,Rural Area,3832,4,11967178
+Kollam,Town Center,1185,1,4094505
+Malappuram,Town Center,3387,6,10689488
+Alappuzha,Town Center,3336,2,11435344
+Kasargod,Town Center,2919,1,8311470
+Kottayam,Pala,2379,4,8223449
+Ernakulam,Edappally,1295,2,6139537
+Pathanamthitta,Town Center,4081,1,10819705
+Kasargod,Rural Area,2256,6,7460891
+Thrissur,Ayyanthole,3369,1,11993435
+Kozhikode,West Hill,1999,5,10355081
+Palakkad,Suburbs,722,4,3317897
+Malappuram,Town Center,1528,4,4996356
+Wayanad,Suburbs,4603,6,16788899
+Idukki,Residential Area,3662,6,13398056
+Alappuzha,Suburbs,842,3,2982069
+Pathanamthitta,Town Center,1705,2,4760418
+Ernakulam,Kochi,4262,3,23099407
+Idukki,Suburbs,4574,3,14035893
+Kollam,Residential Area,3743,3,12373265
+Kannur,Suburbs,2806,5,9301915
+Kozhikode,Beach Road,1701,6,8274282
+Alappuzha,Suburbs,2987,3,8187142
+Kasargod,Suburbs,4967,4,15177770
+Thrissur,Ayyanthole,4574,4,17722883
+Malappuram,Rural Area,4728,5,13484713
+Kottayam,Ettumanoor,2733,6,9654885
+Ernakulam,Kochi,3418,6,19578261
+Alappuzha,Suburbs,4362,5,13822199
+Kannur,Town Center,757,3,2540816
+Kozhikode,Beach Road,4208,3,18594394
+Kozhikode,Nadakkavu,1540,4,7022475
+Kozhikode,Mavoor Road,4752,2,17997792
+Alappuzha,Residential Area,3165,6,9557065
+Kozhikode,Mananchira,2803,2,10850177
+Kottayam,Baker Junction,3806,3,13122521
+Palakkad,Town Center,1280,5,4969336
+Kollam,Residential Area,4671,6,13706058
+Kannur,Town Center,3359,4,10402388
+Kozhikode,Mananchira,4721,5,22275909
+Idukki,Residential Area,1639,5,6290728
+Kollam,Rural Area,2128,3,7166799
+Pathanamthitta,Near Highway,4607,5,17158917
+Idukki,Rural Area,2862,4,10249506
+Kannur,Near Highway,4931,6,19463658
+Malappuram,Residential Area,4885,3,13899020
+Kasargod,Town Center,1268,2,3733836
+Kollam,Residential Area,1487,6,4802835
+Thrissur,Swaraj Round,4260,2,15053611
+Wayanad,Rural Area,3549,2,11451741
+Trivandrum,Technopark,2837,4,12592778
+Idukki,Residential Area,2416,6,9045997
+Idukki,Suburbs,1501,5,5270134
+Idukki,Residential Area,562,6,3893278
+Pathanamthitta,Suburbs,583,2,2132220
+Kottayam,Ettumanoor,4709,3,15294979
+Ernakulam,Kakkanad,1798,3,9186421
+Thrissur,Swaraj Round,1573,4,6966526
+Palakkad,Suburbs,1560,3,5625611
+Wayanad,Residential Area,4741,6,14785344
+Kasargod,Town Center,4197,6,15165106
+Kannur,Suburbs,4934,2,16457946
+Kannur,Town Center,840,2,2858291
+Alappuzha,Residential Area,2901,4,9876915
+Trivandrum,Vellayambalam,4196,1,17405646
+Idukki,Rural Area,1223,4,5036460
+Idukki,Town Center,2515,4,8200409
+Idukki,Near Highway,3433,5,12574283
+Palakkad,Residential Area,4715,3,12449895
+Kozhikode,Nadakkavu,1875,1,6923046
+Ernakulam,Kakkanad,3966,4,19071241
+Kasargod,Near Highway,507,1,1793409
+Trivandrum,Vellayambalam,4764,3,23951003
+Kasargod,Suburbs,3721,1,9877045
+Palakkad,Town Center,3139,3,11493523
+Thrissur,Olarikkara,3883,1,13943537
+Wayanad,Rural Area,3735,6,12494381
+Wayanad,Residential Area,3060,3,8102879
+Trivandrum,Kazhakkoottam,1443,6,8684948
+Alappuzha,Rural Area,2011,4,6487288
+Kollam,Suburbs,1684,5,5179642
+Trivandrum,Kazhakkoottam,920,1,3814893
+Thrissur,Viyyur,4027,2,14275056
+Wayanad,Near Highway,4461,5,12658124
+Wayanad,Residential Area,1069,6,4577927
+Kasargod,Suburbs,2425,1,8365880
+Ernakulam,Aluva,1451,3,8847307
+Kasargod,Near Highway,2200,6,8208500
+Idukki,Suburbs,776,3,2524741
+Pathanamthitta,Near Highway,857,2,2717429
+Thrissur,Ayyanthole,1286,1,4585915
+Pathanamthitta,Residential Area,3710,2,12018056
+Ernakulam,Kakkanad,4763,5,26803291
+Trivandrum,Pattom,591,1,2396895
+Palakkad,Residential Area,1392,1,3636576
+Thrissur,Olarikkara,1915,6,9784317
+Pathanamthitta,Near Highway,1544,3,5918048
+Kozhikode,Nadakkavu,849,3,4347113
+Ernakulam,Kakkanad,742,3,4537654
+Malappuram,Rural Area,4883,3,16467533
+Pathanamthitta,Rural Area,2094,5,7544672
+Kasargod,Suburbs,1362,6,5585230
+Malappuram,Rural Area,527,4,2344238
+Alappuzha,Town Center,3153,1,7829586
+Palakkad,Town Center,3971,5,13018750
+Ernakulam,Kakkanad,3476,5,19530805
+Kasargod,Near Highway,1012,1,3251845
+Kottayam,Baker Junction,3272,1,12229094
+Palakkad,Town Center,2998,5,10414103
+Kasargod,Near Highway,4738,4,17327946
+Wayanad,Near Highway,3955,2,12224488
+Kozhikode,Beach Road,581,1,2121657
+Alappuzha,Residential Area,1304,4,5104449
+Kozhikode,Nadakkavu,1223,4,5790773
+Trivandrum,Kazhakkoottam,2230,2,10478950
+Pathanamthitta,Town Center,1426,1,3862538
+Alappuzha,Residential Area,4898,6,15387161
+Alappuzha,Rural Area,1820,5,7442882
+Kozhikode,West Hill,2479,6,12553321
+Idukki,Residential Area,2959,1,7298419
+Pathanamthitta,Suburbs,1231,3,4367509
+Kasargod,Residential Area,1938,2,5911231
+Kannur,Near Highway,1104,4,5194317
+Kasargod,Suburbs,4411,3,13395772
+Kottayam,Nagampadam,2561,3,9244893
+Kannur,Suburbs,821,3,3703634
+Kannur,Town Center,1492,1,5282576
+Alappuzha,Rural Area,2838,5,11048719
+Malappuram,Near Highway,4176,4,12161256
+Palakkad,Near Highway,2769,2,7834615
+Kozhikode,Nadakkavu,1900,3,8218963
+Kasargod,Suburbs,2006,6,7319154
+Kasargod,Town Center,1052,4,3436905
+Pathanamthitta,Town Center,541,2,1773246
+Trivandrum,Pattom,4001,1,18124783
+Pathanamthitta,Rural Area,4506,5,14303909
+Ernakulam,Aluva,1090,4,6781429
+Thrissur,Ayyanthole,4958,2,19670901
+Ernakulam,Kochi,1377,1,7362522
+Alappuzha,Town Center,1677,3,6065855
+Trivandrum,Vellayambalam,942,5,4768255
+Malappuram,Town Center,1820,2,5741523
+Kottayam,Kanjikuzhy,562,1,2305971
+Thrissur,Ayyanthole,3682,3,15005335
+Wayanad,Near Highway,1216,6,6086507
+Kollam,Suburbs,1010,4,4492374
+Palakkad,Residential Area,1959,3,6787281
+Kottayam,Kanjikuzhy,1551,2,6223595
+Ernakulam,Kochi,4862,6,28038353
+Pathanamthitta,Town Center,1527,4,5625012
+Kozhikode,Beach Road,3521,3,14699702
+Kannur,Rural Area,2666,3,8083206
+Kottayam,Ettumanoor,4521,1,14151432
+Malappuram,Residential Area,3203,2,9208171
+Kozhikode,Beach Road,2174,6,10693173
+Pathanamthitta,Near Highway,2797,1,7167599
+Thrissur,Poonkunnam,1109,5,4959458
+Idukki,Rural Area,4776,5,14125437
+Idukki,Town Center,4589,3,12296823
+Kasargod,Near Highway,4268,1,14117906
+Kollam,Near Highway,2313,6,8325036
+Ernakulam,Aluva,753,6,5659157
+Pathanamthitta,Town Center,2996,6,10968603
+Trivandrum,Kazhakkoottam,3116,6,13636734
+Kozhikode,West Hill,2028,6,9389574
+Idukki,Town Center,4923,1,13877548
+Idukki,Rural Area,4976,4,15031672
+Kozhikode,Nadakkavu,2231,3,10190671
+Alappuzha,Residential Area,3411,6,12053152
+Kannur,Town Center,1229,4,4168019
+Malappuram,Town Center,2539,1,8607912
+Kasargod,Near Highway,1052,5,3785969
+Trivandrum,Kazhakkoottam,4422,3,19000001
+Idukki,Residential Area,2412,5,8976847
+Wayanad,Suburbs,3300,6,12281994
+Pathanamthitta,Town Center,3958,2,11773440
+Kozhikode,Mavoor Road,647,3,3690465
+Thrissur,Swaraj Round,3499,6,14617033
+Kollam,Near Highway,2489,6,8156728
+Malappuram,Town Center,1498,2,4632196
+Ernakulam,Kochi,2814,2,14270118
+Trivandrum,Vellayambalam,2439,3,10623687
+Malappuram,Town Center,3206,6,11669949
+Alappuzha,Suburbs,1450,4,5688883
+Ernakulam,Palarivattom,667,2,3644093
+Ernakulam,Palarivattom,1664,1,7907682
+Trivandrum,Technopark,3973,2,17663860
+Idukki,Suburbs,1041,3,3144426
+Wayanad,Town Center,2801,4,8889602
+Wayanad,Rural Area,2576,4,10169778
+Kasargod,Near Highway,4381,4,14404636
+Palakkad,Residential Area,2001,3,6630953
+Malappuram,Rural Area,4379,5,16066933
+Palakkad,Rural Area,4415,5,12481179
+Idukki,Near Highway,4033,2,13047267
+Wayanad,Residential Area,3876,5,13784199
+Idukki,Rural Area,2790,2,8912733
+Palakkad,Near Highway,1874,1,6167827
+Kollam,Near Highway,3297,1,11445110
+Wayanad,Residential Area,1775,1,4641136
+Kannur,Near Highway,2563,4,9329241
+Malappuram,Suburbs,2745,5,9265420
+Kozhikode,Mananchira,662,1,2168496
+Pathanamthitta,Suburbs,4365,2,13364196
+Kollam,Town Center,1132,2,4209496
+Kottayam,Kanjikuzhy,536,4,3308882
+Malappuram,Suburbs,1750,1,4716393
+Kozhikode,Mananchira,4443,1,15844380
+Pathanamthitta,Town Center,3974,3,12368535
+Trivandrum,Technopark,4028,1,16725731
+Kollam,Near Highway,3384,2,9479736
+Kottayam,Nagampadam,595,3,2711606
+Palakkad,Suburbs,2942,1,10161765
+Kollam,Residential Area,1985,1,6233615
+Wayanad,Near Highway,4961,4,16190032
+Palakkad,Town Center,1592,6,7747883
+Kasargod,Town Center,869,4,3650509
+Kannur,Residential Area,2241,2,6661826
+Alappuzha,Town Center,4241,1,11111611
+Wayanad,Suburbs,3763,1,9702843
+Wayanad,Near Highway,1283,5,4994862
+Kasargod,Near Highway,3003,4,10033746
+Kottayam,Ettumanoor,4413,4,18835345
+Kannur,Suburbs,3160,3,8796707
+Palakkad,Near Highway,2728,5,9519784
+Wayanad,Residential Area,1693,3,6125665
+Trivandrum,Vellayambalam,700,3,3694143
+Alappuzha,Residential Area,3903,3,12725424
+Ernakulam,Aluva,1304,2,6261502
+Wayanad,Residential Area,1394,6,6741189
+Malappuram,Residential Area,4265,5,15797934
+Malappuram,Suburbs,2850,3,7746540
+Kozhikode,West Hill,4252,2,18441433
+Malappuram,Suburbs,4083,2,11629021
+Palakkad,Suburbs,3127,6,12860970
+Thrissur,Poonkunnam,3508,6,15699266
+Ernakulam,Aluva,4948,4,28082859
+Kozhikode,Beach Road,2166,3,8595305
+Malappuram,Near Highway,1774,1,5602376
+Kozhikode,Nadakkavu,1398,6,6908850
+Palakkad,Residential Area,3691,5,13606554
+Wayanad,Near Highway,3042,3,10782267
+Idukki,Near Highway,894,3,3392899
+Trivandrum,Kowdiar,2247,5,10732239
+Kasargod,Near Highway,1127,6,5509649
+Ernakulam,Kakkanad,2502,5,13275465
+Pathanamthitta,Suburbs,2612,5,8878633
+Idukki,Town Center,3190,3,11516374
+Pathanamthitta,Town Center,4167,5,15052030
+Kozhikode,Mananchira,4726,3,17455513
+Trivandrum,Pattom,4111,6,22428560
+Malappuram,Town Center,2545,3,9164363
+Kasargod,Town Center,1570,2,5454390
+Pathanamthitta,Near Highway,3170,3,9689873
+Pathanamthitta,Town Center,1820,5,6487317
+Ernakulam,Palarivattom,2629,6,15123355
+Pathanamthitta,Near Highway,4915,1,14663228
+Malappuram,Residential Area,3564,2,9524176
+Alappuzha,Residential Area,2906,3,10656693
+Ernakulam,Aluva,3408,4,19797839
+Ernakulam,Kochi,4624,4,22250603
+Kozhikode,Beach Road,1413,1,5818258
+Kozhikode,Beach Road,2793,3,12175715
+Palakkad,Near Highway,2431,6,9219035
+Idukki,Suburbs,1658,4,5357847
+Alappuzha,Town Center,4535,2,15572256
+Kozhikode,Beach Road,1374,1,5530538
+Kottayam,Nagampadam,1299,4,5244965
+Idukki,Rural Area,4791,5,14388840
+Palakkad,Rural Area,2882,1,8602849
+Thrissur,Olarikkara,3211,3,11984949
+Alappuzha,Near Highway,620,4,2644840
+Wayanad,Suburbs,4852,3,16378793
+Alappuzha,Near Highway,1906,3,6855655
+Kozhikode,West Hill,4379,4,19219295
+Kannur,Town Center,3607,4,12189296
+Trivandrum,Kazhakkoottam,2664,6,12928974
+Kollam,Residential Area,1062,5,4978013
+Pathanamthitta,Rural Area,2873,1,8559954
+Kannur,Town Center,3690,6,12151769
+Wayanad,Rural Area,3836,2,13031580
+Alappuzha,Suburbs,4012,2,12156277
+Trivandrum,Vellayambalam,2063,5,10798282
+Ernakulam,Kochi,3191,5,18986210
+Wayanad,Suburbs,570,3,2654232
+Kozhikode,Nadakkavu,3547,6,14803707
+Alappuzha,Near Highway,545,2,1904355
+Kasargod,Town Center,4734,4,14731116
+Pathanamthitta,Near Highway,2660,1,7521349
+Palakkad,Suburbs,887,6,3845377
+Palakkad,Town Center,3244,3,10130048
+Idukki,Suburbs,3064,2,8372551
+Palakkad,Near Highway,3606,2,10002454
+Kozhikode,West Hill,2887,3,11715525
+Kollam,Suburbs,1659,1,5688202
+Kasargod,Near Highway,4842,5,18003231
+Idukki,Suburbs,1284,1,4078134
+Thrissur,Olarikkara,827,6,4668864
+Palakkad,Town Center,4433,3,12254308
+Kozhikode,Nadakkavu,939,5,5531444
+Kollam,Suburbs,4765,5,15278901
+Kottayam,Nagampadam,796,5,4005872
+Ernakulam,Aluva,796,4,5273156
+Alappuzha,Suburbs,1826,3,5236840
+Palakkad,Town Center,1899,4,6260536
+Kollam,Residential Area,4652,3,15946837
+Kollam,Suburbs,1994,3,6382441
+Ernakulam,Kakkanad,895,3,5269014
+Wayanad,Residential Area,1076,6,5741075
+Kannur,Town Center,629,4,2973291
+Malappuram,Town Center,4413,5,13248525
+Kannur,Town Center,4458,3,13549853
+Trivandrum,Pattom,1138,2,5801965
+Wayanad,Near Highway,4083,2,12581304
+Ernakulam,Kakkanad,2788,6,15148459
+Kozhikode,Beach Road,3039,1,12603333
+Thrissur,Olarikkara,1272,2,4984534
+Kottayam,Ettumanoor,2385,1,9139970
+Trivandrum,Vellayambalam,884,6,6421293
+Wayanad,Residential Area,919,6,4811250
+Kasargod,Suburbs,600,3,2533093
+Malappuram,Rural Area,2199,6,7852242
+Trivandrum,Kazhakkoottam,712,6,4671363
+Kozhikode,Mananchira,1840,6,8847842
+Malappuram,Suburbs,1726,4,6192465
+Alappuzha,Town Center,1749,3,5657601
+Kollam,Rural Area,4614,1,13844253
+Idukki,Town Center,4204,6,14986189
+Alappuzha,Rural Area,2156,2,7377035
+Palakkad,Residential Area,1788,3,6138304
+Kollam,Suburbs,2051,5,7986161
+Kozhikode,Nadakkavu,4566,2,18148440
+Kollam,Near Highway,574,6,3492351
+Kollam,Town Center,2634,6,9944312
+Ernakulam,Kochi,2896,4,15478956
+Idukki,Town Center,2437,2,7544606
+Alappuzha,Rural Area,4015,3,13892670
+Kollam,Rural Area,2097,4,6970872
+Malappuram,Town Center,2921,2,10491117
+Trivandrum,Pattom,581,4,3707499
+Wayanad,Residential Area,900,4,3514517
+Palakkad,Town Center,4277,2,13850715
+Thrissur,Olarikkara,4930,4,17679240
+Kasargod,Residential Area,2714,6,8364143
+Malappuram,Near Highway,4104,2,10894121
+Pathanamthitta,Suburbs,4915,4,17440036
+Pathanamthitta,Rural Area,607,4,2448849
+Ernakulam,Palarivattom,2834,4,14795365
+Alappuzha,Near Highway,2865,6,10329749
+Kottayam,Pala,2524,4,10843629
+Thrissur,Ayyanthole,3135,4,12846668
+Thrissur,Viyyur,4686,5,18315739
+Idukki,Residential Area,4059,2,12628658
+Kannur,Town Center,1105,3,4154097
+Idukki,Suburbs,2640,2,9046942
+Kottayam,Kanjikuzhy,1103,6,6036522
+Ernakulam,Kakkanad,3925,3,18494068
+Kasargod,Suburbs,2585,4,9952739
+Idukki,Town Center,2697,3,9524777
+Pathanamthitta,Residential Area,3238,5,12946322
+Kannur,Rural Area,4801,1,14734350
+Idukki,Residential Area,2503,6,9840230
+Alappuzha,Town Center,3790,5,13358610
+Trivandrum,Vellayambalam,2517,2,11692395
+Trivandrum,Vellayambalam,4094,2,17608789
+Ernakulam,Palarivattom,4874,6,26043759
+Wayanad,Near Highway,4313,1,11560790
+Ernakulam,Aluva,3395,5,17930720
+Ernakulam,Palarivattom,1045,1,4717257
+Palakkad,Near Highway,4486,3,15899472
+Alappuzha,Residential Area,3876,4,13121101
+Kasargod,Residential Area,1219,2,3409273
+Trivandrum,Kazhakkoottam,1429,2,7318133
+Malappuram,Suburbs,606,6,3909409
+Kollam,Town Center,1976,2,6573732
+Kozhikode,West Hill,674,1,2692631
+Alappuzha,Near Highway,4648,2,13918650
+Thrissur,Ayyanthole,4422,4,18020140
+Ernakulam,Aluva,2856,2,13623454
+Palakkad,Suburbs,1291,5,5463681
+Kottayam,Kanjikuzhy,2945,5,11655353
+Kannur,Residential Area,1723,5,6421168
+Idukki,Near Highway,1095,2,3407929
+Kozhikode,Mavoor Road,4182,2,15322923
+Ernakulam,Aluva,634,3,3303420
+Idukki,Rural Area,2052,1,6794918
+Idukki,Near Highway,3954,5,14253249
+Wayanad,Rural Area,4071,1,12313793
+Kasargod,Near Highway,3756,2,10026029
+Ernakulam,Palarivattom,2287,3,12752772
+Pathanamthitta,Rural Area,2663,4,9889160
+Pathanamthitta,Residential Area,3864,4,12754769
+Idukki,Near Highway,3953,1,10128820
+Kollam,Rural Area,1400,2,4085986
+Kannur,Near Highway,4007,3,12389449
+Kollam,Suburbs,1874,3,7158642
+Idukki,Suburbs,2829,4,10180804
+Kozhikode,West Hill,921,4,4613455
+Wayanad,Rural Area,4033,4,14872654
+Kottayam,Kanjikuzhy,4952,4,19625273
+Idukki,Rural Area,4379,2,13746566
+Ernakulam,Kochi,2005,2,11017375
+Pathanamthitta,Near Highway,1464,4,5124257
+Palakkad,Residential Area,4688,3,12422912
+Idukki,Residential Area,874,3,3617763
+Ernakulam,Kochi,2745,2,12870046
+Trivandrum,Pattom,1103,5,6307780
+Kasargod,Suburbs,2952,5,9197636
+Kottayam,Ettumanoor,3351,3,11207920
+Wayanad,Town Center,3606,1,9467571
+Thrissur,Olarikkara,1576,2,6721472
+Malappuram,Rural Area,1185,5,6031141
+Trivandrum,Kazhakkoottam,3918,4,17234149
+Ernakulam,Aluva,1442,2,8011832
+Thrissur,Olarikkara,2844,5,13412868
+Pathanamthitta,Residential Area,1862,4,5919553
+Pathanamthitta,Suburbs,4014,5,12723405
+Kollam,Residential Area,1498,5,5842009
+Kollam,Residential Area,2771,6,9401503
+Palakkad,Town Center,4922,2,13744359
+Trivandrum,Technopark,2477,4,10898391
+Pathanamthitta,Rural Area,4361,4,13403131
+Kollam,Near Highway,4653,3,12429377
+Pathanamthitta,Suburbs,2050,2,5649281
+Kottayam,Ettumanoor,1300,4,5599627
+Thrissur,Ayyanthole,4816,5,21156516
+Ernakulam,Aluva,2754,4,16613695
+Kollam,Town Center,913,1,2630137
+Idukki,Rural Area,1303,4,5137517
+Palakkad,Town Center,2260,2,6701536
+Malappuram,Suburbs,2540,5,8858056
+Kozhikode,Mavoor Road,3278,2,13630966
+Thrissur,Swaraj Round,1664,2,6824379
+Kozhikode,West Hill,4072,5,16457063
+Thrissur,Ayyanthole,4746,2,20233300
+Malappuram,Rural Area,3896,5,13544271
+Trivandrum,Vellayambalam,2655,5,13933088
+Idukki,Suburbs,4008,4,12774060
+Kollam,Rural Area,1616,1,5028102
+Trivandrum,Pattom,3260,1,13472240
+Idukki,Suburbs,3872,5,13028442
+Thrissur,Viyyur,2616,2,10624992
+Palakkad,Near Highway,533,3,2094915
+Kasargod,Town Center,4957,2,15062052
+Kasargod,Residential Area,1062,4,3821098
+Wayanad,Town Center,764,5,3156525
+Kozhikode,Nadakkavu,3016,5,14438485
+Kollam,Suburbs,3914,2,12830769
+Kollam,Rural Area,1194,1,3960948
+Thrissur,Viyyur,662,6,5126122
+Malappuram,Residential Area,4883,1,13254272
+Kozhikode,Mavoor Road,1829,3,7436471
+Kasargod,Rural Area,2107,1,5606401
+Kollam,Suburbs,4621,3,14988414
+Alappuzha,Suburbs,3243,2,9813687
+Malappuram,Near Highway,3972,4,13229882
+Wayanad,Residential Area,1000,1,3395580
+Alappuzha,Near Highway,3860,5,15144763
+Kottayam,Baker Junction,3899,5,12853547
+Ernakulam,Kakkanad,4702,6,22264325
+Kasargod,Near Highway,2336,4,8986121
+Trivandrum,Pattom,2226,2,11069001
+Idukki,Near Highway,4511,3,13537135
+Ernakulam,Palarivattom,919,6,6032084
+Kottayam,Nagampadam,1422,5,6219296
+Ernakulam,Kochi,3200,2,17790491
+Kasargod,Suburbs,1632,1,4815308
+Kasargod,Residential Area,886,5,4836708
+Kollam,Rural Area,2355,1,7016425
+Kottayam,Nagampadam,4874,4,16738741
+Malappuram,Residential Area,3741,1,11391930
+Kannur,Suburbs,3212,2,10700751
+Pathanamthitta,Rural Area,2962,2,9163492
+Alappuzha,Near Highway,3762,6,11808841
+Kollam,Rural Area,847,5,4148709
+Trivandrum,Kazhakkoottam,4429,1,17913399
+Alappuzha,Near Highway,3724,2,12239733
+Malappuram,Residential Area,1877,6,7136088
+Kozhikode,Nadakkavu,943,4,5009163
+Kozhikode,Beach Road,4926,2,20969217
+Alappuzha,Near Highway,2518,6,9965977
+Thrissur,Poonkunnam,1040,6,5464517
+Alappuzha,Residential Area,3216,2,10881521
+Palakkad,Residential Area,4995,4,13185933
+Thrissur,Poonkunnam,4903,6,17771233
+Kozhikode,Mananchira,2385,2,10851760
+Malappuram,Residential Area,3683,5,12837618
+Kottayam,Ettumanoor,3870,4,16197369
+Pathanamthitta,Town Center,1635,1,5729533
+Malappuram,Suburbs,4601,1,12999709
+Trivandrum,Pattom,659,5,4269415
+Kasargod,Residential Area,914,6,4644306
+Wayanad,Residential Area,2698,6,9096384
+Kottayam,Baker Junction,570,4,2662974
+Kasargod,Suburbs,2207,5,9312154
+Pathanamthitta,Town Center,2330,5,7264720
+Kasargod,Town Center,4907,4,17350798
+Palakkad,Suburbs,1157,3,3564809
+Ernakulam,Kochi,2999,3,17052043
+Trivandrum,Kowdiar,4558,2,20964000
+Thrissur,Viyyur,1717,3,7084374
+Kottayam,Kanjikuzhy,1352,4,6544258
+Trivandrum,Kowdiar,1325,2,6913586
+Kannur,Residential Area,3975,6,11774564
+Kollam,Town Center,2831,4,9193316
+Idukki,Residential Area,4271,3,14376072
+Kasargod,Rural Area,2021,3,7795854
+Kasargod,Residential Area,4218,6,14696890
+Kozhikode,West Hill,2394,4,9510518
+Trivandrum,Technopark,4096,5,18025588
+Kollam,Near Highway,3246,5,10470748
+Ernakulam,Kakkanad,1785,6,10556362
+Malappuram,Suburbs,3372,6,10233102
+Ernakulam,Palarivattom,2119,4,11866861
+Palakkad,Suburbs,2850,3,8636402
+Thrissur,Olarikkara,3038,1,12048321
+Kottayam,Nagampadam,1723,1,6342215
+Alappuzha,Residential Area,1301,4,5011536
+Malappuram,Town Center,734,3,2682895
+Kannur,Near Highway,596,5,3334681
+Kottayam,Ettumanoor,3896,5,16406979
+Ernakulam,Kakkanad,1363,2,7016328
+Malappuram,Residential Area,3579,1,9234347
+Trivandrum,Kazhakkoottam,2280,1,10332669
+Ernakulam,Edappally,1466,5,9047774
+Alappuzha,Near Highway,1289,2,4058420
+Trivandrum,Vellayambalam,3977,6,21964476
+Palakkad,Near Highway,1115,6,5486409
+Alappuzha,Town Center,1276,1,3225458
+Idukki,Town Center,4366,1,13269861
+Kottayam,Nagampadam,4669,5,16491346
+Palakkad,Near Highway,891,4,3919932
+Idukki,Near Highway,3414,3,11205999
+Kottayam,Kanjikuzhy,944,4,3715053
+Alappuzha,Suburbs,1383,3,5160388
+Kottayam,Nagampadam,3047,5,13506852
+Thrissur,Ayyanthole,2810,3,10419226
+Thrissur,Olarikkara,3497,2,13445206
+Kottayam,Baker Junction,3264,4,12829488
+Kollam,Rural Area,3201,4,10573290
+Idukki,Rural Area,1195,5,5196976
+Palakkad,Residential Area,2963,3,10883161
+Kollam,Town Center,4471,3,14010672
+Thrissur,Swaraj Round,1032,1,3643982
+Kozhikode,Nadakkavu,2722,5,12021534
+Idukki,Near Highway,3377,3,11974259
+Idukki,Rural Area,613,1,2008644
+Kasargod,Suburbs,1064,5,3888300
+Ernakulam,Kochi,2501,3,12419887
+Kozhikode,Beach Road,4044,1,15248386
+Palakkad,Town Center,1920,5,7219994
+Kannur,Suburbs,4490,3,13024994
+Kollam,Near Highway,3337,6,10950539
+Malappuram,Rural Area,4591,6,14758020
+Ernakulam,Kochi,943,4,5893719
+Thrissur,Viyyur,3865,1,13321466
+Thrissur,Olarikkara,2521,3,9277913
+Kasargod,Suburbs,4175,2,14924146
+Palakkad,Near Highway,1026,6,5516077
+Ernakulam,Edappally,3982,3,18942185
+Kollam,Near Highway,2999,4,10308767
+Wayanad,Residential Area,3191,3,8881011
+Ernakulam,Aluva,4655,3,26291325
+Kottayam,Pala,2088,5,8397938
+Wayanad,Rural Area,3801,2,10965827
+Pathanamthitta,Rural Area,1103,5,5365350
+Kozhikode,Mavoor Road,2855,3,11627320
+Malappuram,Near Highway,767,2,2352184
+Trivandrum,Kazhakkoottam,2276,3,10379683
+Kollam,Suburbs,4045,5,11684615
+Idukki,Rural Area,1543,6,6536651
+Kozhikode,Nadakkavu,2920,1,12345154
+Alappuzha,Rural Area,3478,2,11549275
+Wayanad,Town Center,4989,6,15638062
+Ernakulam,Kakkanad,1506,6,9186106
+Thrissur,Viyyur,1198,5,5397948
+Pathanamthitta,Residential Area,3243,5,11907815
+Kasargod,Near Highway,2603,1,6715906
+Palakkad,Near Highway,4347,5,15636851
+Kannur,Near Highway,1796,3,5876785
+Kasargod,Suburbs,3805,2,12017003
+Thrissur,Viyyur,2596,2,11531389
+Ernakulam,Kakkanad,3029,4,17179393
+Kasargod,Town Center,1452,1,3836312
+Palakkad,Suburbs,1575,5,5980163
+Alappuzha,Suburbs,3367,1,11399222
+Wayanad,Town Center,4106,1,10859263
+Kozhikode,Mavoor Road,1417,5,7717514
+Kozhikode,Beach Road,4951,1,21643849
+Ernakulam,Kochi,3164,2,17252876
+Kozhikode,Beach Road,788,3,3783586
+Malappuram,Near Highway,1362,4,4481775
+Alappuzha,Town Center,1464,4,5633524
+Idukki,Near Highway,4070,4,14522828
+Ernakulam,Aluva,1059,4,7160045
+Kottayam,Nagampadam,832,2,3406276
+Idukki,Near Highway,824,1,2153492
+Palakkad,Near Highway,1828,2,6819723
+Kottayam,Baker Junction,1974,1,6980844
+Palakkad,Near Highway,2780,2,8223619
+Kollam,Rural Area,1018,2,3855050
+Kannur,Residential Area,3643,2,12544116
+Kasargod,Near Highway,4255,6,15765038
+Idukki,Town Center,1068,1,3510123
+Palakkad,Suburbs,3494,6,13494865
+Idukki,Suburbs,3566,3,12932977
+Alappuzha,Suburbs,3487,3,12470306
+Kannur,Rural Area,3013,5,10991742
+Kollam,Rural Area,2001,3,7012053
+Trivandrum,Vellayambalam,2908,5,15034401
+Trivandrum,Technopark,3373,2,17048462
+Kannur,Suburbs,2929,6,10351944
+Alappuzha,Suburbs,4077,5,11530600
+Kannur,Town Center,4954,5,18843649
+Kasargod,Town Center,2696,2,9731572
+Kasargod,Near Highway,2880,6,11508612
+Kollam,Suburbs,2644,2,7827201
+Palakkad,Suburbs,4920,3,16916778
+Malappuram,Near Highway,1078,6,5544012
+Kollam,Town Center,2545,4,8965566
+Kannur,Suburbs,4219,3,14908080
+Kannur,Suburbs,4906,3,16083076
+Kannur,Town Center,3640,1,11237078
+Kollam,Town Center,3112,6,11564450
+Kannur,Rural Area,4311,1,14788665
+Kasargod,Suburbs,4459,4,15417827
+Kannur,Town Center,4078,4,13156543
+Kannur,Rural Area,2383,3,7818922
+Kasargod,Town Center,1527,3,5431897
+Trivandrum,Technopark,1932,6,9494889
+Kannur,Residential Area,4099,6,14217311
+Pathanamthitta,Near Highway,1606,1,4648760
+Kozhikode,Nadakkavu,4189,5,18794227
+Malappuram,Town Center,3011,2,8462371
+Palakkad,Rural Area,1455,1,4226637
+Idukki,Town Center,4464,1,15259696
+Pathanamthitta,Town Center,1750,3,6706803
+Kasargod,Residential Area,3477,6,12288515
+Kannur,Town Center,3880,2,13582423
+Thrissur,Swaraj Round,4644,2,16331954
+Kollam,Rural Area,4732,4,15944506
+Alappuzha,Near Highway,2638,1,6807053
+Trivandrum,Pattom,3793,4,17515136
+Idukki,Town Center,1237,1,3347294
+Kasargod,Residential Area,3469,1,9506268
+Thrissur,Swaraj Round,1100,1,4323979
+Thrissur,Poonkunnam,2824,4,12953536
+Kannur,Rural Area,2959,5,10370205
+Kottayam,Nagampadam,1736,1,5576629
+Ernakulam,Kochi,3957,5,20409181
+Kasargod,Near Highway,4189,5,12264183
+Kasargod,Suburbs,2080,3,6718413
+Wayanad,Residential Area,4286,2,13087405
+Palakkad,Suburbs,4379,3,13063851
+Kannur,Town Center,3358,6,12181097
+Trivandrum,Pattom,1626,3,7819789
+Alappuzha,Residential Area,1143,3,4628876
+Pathanamthitta,Suburbs,3254,2,9278062
+Trivandrum,Vellayambalam,4946,4,22888181
+Thrissur,Olarikkara,1569,4,7101165
+Thrissur,Ayyanthole,673,3,3237638
+Wayanad,Near Highway,1841,5,7585244
+Ernakulam,Kakkanad,4292,2,21266261
+Thrissur,Olarikkara,1598,4,7350006
+Wayanad,Residential Area,1674,3,6367879
+Wayanad,Near Highway,1342,5,5983313
+Alappuzha,Suburbs,4994,4,17742013
+Kannur,Suburbs,2573,2,8223126
+Malappuram,Rural Area,2353,6,9870780
+Kottayam,Baker Junction,2346,4,9071274
+Thrissur,Viyyur,1324,2,5353789
+Palakkad,Near Highway,1592,6,5668799
+Kannur,Rural Area,2487,4,9265093
+Kannur,Residential Area,590,4,3483719
+Kottayam,Baker Junction,3480,1,12953069
+Wayanad,Residential Area,4754,5,17578307
+Ernakulam,Kochi,2083,3,10559317
+Alappuzha,Near Highway,4791,5,17297430
+Kasargod,Residential Area,2299,1,6473597
+Alappuzha,Residential Area,2145,4,6540445
+Alappuzha,Town Center,3020,4,10122451
+Kannur,Rural Area,2637,1,7919189
+Kozhikode,Nadakkavu,3993,2,15571066
+Kozhikode,West Hill,4289,1,16623995
+Alappuzha,Near Highway,1876,4,6474293
+Kottayam,Kanjikuzhy,4541,3,17703530
+Alappuzha,Near Highway,1800,3,6617948
+Malappuram,Near Highway,4128,4,14324464
+Pathanamthitta,Suburbs,2685,3,8966751
+Ernakulam,Kochi,793,4,4225951
+Idukki,Town Center,4660,1,12943975
+Malappuram,Suburbs,3504,6,10748853
+Kottayam,Kanjikuzhy,2734,1,8207225
+Idukki,Residential Area,2595,6,9447677
+Idukki,Near Highway,1722,3,5818075
+Kollam,Residential Area,3399,6,12843743
+Kasargod,Suburbs,2711,6,9476834
+Ernakulam,Palarivattom,4903,5,26843505
+Wayanad,Suburbs,4295,6,15882199
+Wayanad,Town Center,1730,3,6164036
+Kozhikode,Nadakkavu,2963,2,11944216
+Pathanamthitta,Rural Area,1708,2,5247730
+Kasargod,Suburbs,4196,2,14606462
+Kasargod,Near Highway,2546,3,8429257
+Kasargod,Town Center,3384,4,9086054
+Malappuram,Suburbs,3715,2,12479520
+Kollam,Rural Area,1473,2,5371768
+Wayanad,Rural Area,4628,1,16000652
+Kottayam,Kanjikuzhy,1010,5,4873069
+Kasargod,Residential Area,1015,2,2753931
+Alappuzha,Near Highway,1700,2,4779901
+Alappuzha,Town Center,1282,2,4095310
+Kozhikode,Beach Road,3652,6,17040480
+Kasargod,Rural Area,3965,3,14194762
+Kottayam,Ettumanoor,1250,2,4885542
+Ernakulam,Palarivattom,4071,1,21721594
+Ernakulam,Palarivattom,3767,4,21253791
+Kannur,Near Highway,4704,4,15052316
+Kozhikode,Beach Road,1227,2,4832966
+Kozhikode,Nadakkavu,4369,2,18855508
+Malappuram,Near Highway,2522,1,6661574
+Kannur,Suburbs,4703,4,17566823
+Trivandrum,Technopark,713,3,3503186
+Wayanad,Near Highway,3136,5,10884872
+Pathanamthitta,Town Center,3600,2,11571892
+Kollam,Suburbs,4670,3,16215027
+Malappuram,Suburbs,3445,1,11215525
+Malappuram,Near Highway,3028,3,9030061
+Kottayam,Ettumanoor,1133,5,5649005
+Kottayam,Pala,2842,6,12928269
+Trivandrum,Kazhakkoottam,4250,2,19917330
+Kottayam,Ettumanoor,735,2,2604668
+Kannur,Suburbs,2681,4,10106194
+Pathanamthitta,Rural Area,3561,6,14639410
+Kannur,Town Center,1483,6,6149779
+Wayanad,Rural Area,4517,2,12319606
+Palakkad,Town Center,1276,4,4711610
+Kannur,Near Highway,2528,3,8927877
+Kollam,Residential Area,3454,2,9254175
+Kottayam,Nagampadam,1082,3,4664169
+Thrissur,Poonkunnam,3674,6,17640768
+Kasargod,Suburbs,3097,5,9883133
+Idukki,Suburbs,3712,2,10681681
+Malappuram,Town Center,1211,5,4623987
+Trivandrum,Vellayambalam,4517,2,18288742
+Trivandrum,Kowdiar,4379,5,19330484
+Thrissur,Ayyanthole,1407,6,6887462
+Thrissur,Poonkunnam,2881,5,12707630
+Thrissur,Viyyur,3782,5,17254146
+Kottayam,Nagampadam,4725,5,19197080
+Pathanamthitta,Town Center,2540,4,8568839
+Kannur,Residential Area,4386,6,15049074
+Alappuzha,Rural Area,3458,4,11396029
+Kannur,Residential Area,1060,4,4603090
+Alappuzha,Town Center,3492,2,12147923
+Trivandrum,Kowdiar,4530,2,20579862
+Kollam,Near Highway,1625,5,6216884
+Ernakulam,Kakkanad,3831,4,21981523
+Kannur,Rural Area,4071,4,12543368
+Kannur,Near Highway,2735,2,9498583
+Pathanamthitta,Residential Area,634,3,2811448
+Thrissur,Swaraj Round,3616,1,14384363
+Kasargod,Near Highway,2322,5,9355999
+Thrissur,Viyyur,3211,1,12110859
+Kozhikode,Beach Road,2824,4,13764640
+Kollam,Rural Area,4778,1,15198642
+Alappuzha,Rural Area,1333,3,4701628
+Palakkad,Suburbs,1021,4,4312645
+Kozhikode,Nadakkavu,1752,6,8639559
+Kollam,Town Center,1326,2,4660298
+Kasargod,Near Highway,3974,4,14534114
+Wayanad,Near Highway,3778,3,12593037
+Ernakulam,Edappally,2355,2,11139696
+Trivandrum,Pattom,1951,5,10951969
+Kannur,Residential Area,2157,1,6610052
+Kozhikode,Beach Road,4748,6,22594594
+Alappuzha,Residential Area,3244,2,10054486
+Wayanad,Residential Area,2122,4,7812440
+Kottayam,Ettumanoor,703,4,3863832
+Trivandrum,Pattom,3062,3,15771382
+Wayanad,Rural Area,1876,1,6365317
+Alappuzha,Suburbs,3439,3,12283827
+Trivandrum,Technopark,850,2,4258400
+Pathanamthitta,Residential Area,1621,6,6179717
+Pathanamthitta,Rural Area,2833,6,10713027
+Ernakulam,Aluva,3098,6,17110763
+Kollam,Suburbs,596,3,2792265
+Ernakulam,Kochi,807,4,5052076
+Alappuzha,Rural Area,3589,1,8975813
+Kollam,Rural Area,4918,2,15031467
+Kottayam,Baker Junction,2652,2,10745360
+Pathanamthitta,Rural Area,2860,3,9407965
+Kannur,Residential Area,4032,1,13886416
+Thrissur,Viyyur,3989,4,16116415
+Ernakulam,Aluva,3197,6,17238330
+Ernakulam,Palarivattom,2619,4,13032068
+Malappuram,Town Center,843,5,3446933
+Alappuzha,Town Center,2961,2,10168544
+Trivandrum,Technopark,2127,2,9143134
+Idukki,Rural Area,756,5,3648136
+Trivandrum,Pattom,1777,4,8452138
+Kasargod,Residential Area,919,5,5142593
+Kannur,Town Center,1000,1,3300530
+Kannur,Suburbs,3505,3,11519940
+Wayanad,Residential Area,3546,2,11099080
+Ernakulam,Aluva,2456,5,13830247
+Kollam,Town Center,2179,6,7776826
+Kasargod,Residential Area,4043,5,13876572
+Thrissur,Ayyanthole,752,3,3090879
+Trivandrum,Kowdiar,2212,2,11157005
+Kottayam,Nagampadam,678,1,2712457
+Wayanad,Residential Area,4173,5,14112703
+Kollam,Near Highway,4157,3,12898420
+Alappuzha,Residential Area,4534,5,13306440
+Kottayam,Nagampadam,4558,4,18450881
+Wayanad,Town Center,4556,3,13106926
+Idukki,Town Center,2645,5,10816225
+Kannur,Residential Area,4317,5,13333690
+Kannur,Near Highway,2693,1,8047459
+Malappuram,Residential Area,4128,4,11906078
+Pathanamthitta,Suburbs,958,1,2706532
+Kasargod,Near Highway,2437,6,7960204
+Malappuram,Rural Area,1389,6,6220249
+Thrissur,Olarikkara,1421,4,7624583
+Thrissur,Olarikkara,2874,4,11198769
+Malappuram,Rural Area,1868,3,5256009
+Kozhikode,Mananchira,1622,6,8450516
+Wayanad,Near Highway,617,2,2051649
+Kollam,Town Center,1187,1,4213941
+Alappuzha,Town Center,1588,2,4489413
+Kannur,Residential Area,1750,5,5923130
+Ernakulam,Kakkanad,2676,4,12941158
+Ernakulam,Palarivattom,4902,2,23314105
+Palakkad,Near Highway,2260,2,7162202
+Ernakulam,Kochi,3651,4,17711759
+Wayanad,Rural Area,4824,4,14185305
+Trivandrum,Vellayambalam,2487,2,10895903
+Trivandrum,Vellayambalam,4639,6,21872886
+Kollam,Residential Area,1761,1,5301022
+Palakkad,Suburbs,2868,4,10694990
+Wayanad,Suburbs,1230,3,4343530
+Palakkad,Residential Area,854,4,4072147
+Kozhikode,Mavoor Road,3309,4,13060489
+Thrissur,Olarikkara,1393,5,6610981
+Pathanamthitta,Rural Area,1028,5,4229512
+Kasargod,Near Highway,4859,3,16874723
+Pathanamthitta,Suburbs,4886,4,14152935
+Kozhikode,West Hill,2870,1,10909286
+Wayanad,Town Center,4966,3,17867247
+Trivandrum,Kazhakkoottam,4183,6,22457056
+Kannur,Residential Area,3379,3,9078422
+Ernakulam,Aluva,4417,4,24952532
+Alappuzha,Residential Area,2180,3,6797658
+Kottayam,Kanjikuzhy,615,5,3205143
+Thrissur,Swaraj Round,3017,3,11539286
+Alappuzha,Residential Area,1647,6,6575360
+Thrissur,Swaraj Round,3019,1,13049890
+Trivandrum,Technopark,1773,1,8172253
+Malappuram,Near Highway,2159,5,8226971
+Idukki,Suburbs,1051,1,3153266
+Alappuzha,Suburbs,3992,6,12231871
+Malappuram,Town Center,4622,3,13905569
+Alappuzha,Town Center,3069,5,10095627
+Malappuram,Near Highway,3635,4,12982587
+Idukki,Near Highway,564,4,2544071
+Thrissur,Viyyur,1400,6,6671518
+Pathanamthitta,Near Highway,3476,4,10412949
+Idukki,Suburbs,830,5,4230282
+Wayanad,Near Highway,3008,5,10283754
+Idukki,Residential Area,4530,5,12868845
+Alappuzha,Suburbs,2018,3,6298130
+Ernakulam,Kakkanad,1589,5,9876954
+Idukki,Suburbs,3342,3,9931203
+Kozhikode,Mavoor Road,2904,5,13303237
+Kannur,Rural Area,3653,4,12305013
+Kozhikode,Mavoor Road,3572,5,14905699
+Kasargod,Town Center,4412,1,13032747
+Idukki,Near Highway,4996,4,14760397
+Idukki,Near Highway,1307,3,5205001
+Ernakulam,Edappally,4816,6,27503104
+Wayanad,Near Highway,2518,6,8283251
+Kozhikode,Nadakkavu,4635,2,17224782
+Pathanamthitta,Town Center,1330,4,4735574
+Wayanad,Suburbs,2544,3,8246285
+Kasargod,Rural Area,5000,3,15209826
+Pathanamthitta,Rural Area,830,2,2493431
+Kozhikode,Mananchira,1473,6,7389897
+Kasargod,Town Center,4746,5,17411304
+Trivandrum,Kazhakkoottam,619,3,3380988
+Kottayam,Pala,3751,2,12876849
+Kozhikode,Mavoor Road,1807,4,8284074
+Pathanamthitta,Suburbs,2148,1,7372428
+Alappuzha,Suburbs,4570,6,13685296
+Kollam,Town Center,1468,6,6365228
+Kollam,Residential Area,3275,2,10132435
+Wayanad,Residential Area,2355,4,7852307
+Thrissur,Ayyanthole,1029,6,5631878
+Thrissur,Swaraj Round,2385,4,11044256
+Kozhikode,Mavoor Road,4022,4,15967009
+Kollam,Town Center,3865,6,13765533
+Kannur,Rural Area,1269,1,3080206
+Thrissur,Olarikkara,1738,2,8044216
+Malappuram,Near Highway,2754,1,7749198
+Trivandrum,Kazhakkoottam,1253,3,5817847
+Kozhikode,Mananchira,2238,4,10893733
+Pathanamthitta,Suburbs,3502,5,11523397
+Pathanamthitta,Near Highway,4582,1,15573558
+Malappuram,Near Highway,3995,6,16168224
+Pathanamthitta,Town Center,670,2,2099178
+Pathanamthitta,Near Highway,3505,5,9677722
+Pathanamthitta,Suburbs,2928,6,10441151
+Alappuzha,Town Center,1598,4,5852291

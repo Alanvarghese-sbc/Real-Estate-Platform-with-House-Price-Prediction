@@ -1,0 +1,90 @@
+{% extends 'broker/brokerLayout.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Property Details Card -->
+
+
+<hr>
+<h5>User Requests</h5>
+<table class="table table-sm">
+  <tr>
+    <th>User</th>
+    <th>Date</th>
+    <th>Status</th>
+  </tr>
+
+  {% for r in requests %}
+  <tr>
+    <td>{{ r.full_name }}</td>
+    <td>{{ r.request_date|date:'d-m-Y' }}</td>
+    <td>{{ r.property_req_status }}</td>
+  </tr>
+  {% empty %}
+  <tr>
+    <td colspan="3" class="text-muted text-center">
+      No requests yet
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<h5 class="mt-4">Bids</h5>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Amount</th>
+      <th>Predicted Amount</th>
+      <th>Deal Status</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for b in bids %}
+    <tr {% if forloop.first %}class="table-success" {% endif %}>
+      <td>{{ b.full_name }}</td>
+      <td class="fw-bold text-success">
+        ₹ {{ b.bid_amount }}
+        {% if forloop.first %}<span class="badge bg-success ms-2">Highest</span>{% endif %}
+      </td>
+      <td>
+        {% if property.price_predicted %}
+        <span class="text-primary fw-bold">₹ {{ property.price_predicted|floatformat:0 }}</span>
+        <span class="badge bg-info ms-1">🤖 AI</span>
+        {% else %}
+        <span class="text-muted">N/A</span>
+        {% endif %}
+      </td>
+      <td>
+        {% if b.deal_status %}
+        <span class="badge bg-{{ b.deal_status.color }}">{{ b.deal_status.text }}</span>
+        {% else %}
+        <span class="badge bg-secondary">N/A</span>
+        {% endif %}
+      </td>
+      <td>{{ b.bid_date|date:'d-m-Y' }}</td>
+
+      <td>
+        {% if b.property_req_status == 'accepted' %}
+        <span class="badge bg-success w-100 d-block mb-1 py-2">Accepted</span>
+        {% elif b.property_req_status == 'rejected' %}
+        <span class="badge bg-danger w-100 d-block mb-1 py-1">Rejected</span>
+        {% elif is_accepted %}
+        <span class="badge bg-secondary w-100 d-block mb-1 py-1">Closed</span>
+        {% else %}
+        <div class="d-flex gap-1 mb-1">
+          <a href="{% url 'acceptBid' b.bid_id %}" class="btn btn-sm btn-success flex-grow-1">Accept</a>
+          <a href="{% url 'rejectBid' b.bid_id %}" class="btn btn-sm btn-danger flex-grow-1">Reject</a>
+        </div>
+        {% endif %}
+        <a href="{% url 'view_chat' b.bid_id %}" class="btn btn-sm btn-outline-primary d-block w-100">Chat</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}

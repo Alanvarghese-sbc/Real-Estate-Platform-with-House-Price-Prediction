@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .site-blocks-cover {
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .site-blocks-cover::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        .login-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .login-card {
+            max-width: 420px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .form-control {
+            height: 48px;
+            border-radius: 10px;
+        }
+
+        .form-control:focus {
+            border-color: #4e73df;
+            box-shadow: 0 0 0 0.15rem rgba(78, 115, 223, 0.25);
+        }
+
+        .input-group-text {
+            background: #fff;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4e73df, #224abe);
+            border: none;
+            border-radius: 25px;
+            padding: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-title {
+            font-weight: 700;
+        }
+
+        .text-muted-small {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="site-blocks-cover"
+     style="background-image: url({% static 'home/images/hero_1.jpg' %});">
+
+    <div class="container login-wrapper">
+        <div class="row min-vh-100 align-items-center justify-content-center">
+
+            <div class="col-md-6 col-lg-4">
+
+                <!-- Login Card -->
+                <form action="{% url 'check_login' %}" method="post"
+                      class="p-5 bg-white login-card">
+
+                    {% csrf_token %}
+
+                    <h2 class="text-center login-title mb-2">Welcome Back 👋</h2>
+                    <p class="text-center text-muted mb-4">
+                        Login to continue
+                    </p>
+
+                    <!-- Django Messages -->
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-danger text-center">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label class="form-label">Username or Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                            <input type="email" name="uname"
+                                   class="form-control"
+                                   placeholder="Enter registerd email"
+                                   required>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                            <input type="password" name="password"
+                                   class="form-control"
+                                   placeholder="Enter password"
+                                   minlength="6"
+                                   maxlength="20"
+                                   required>
+                        </div>
+                    </div>
+
+                    <!-- Forgot Password -->
+                    <div class="text-end mb-3">
+                        <a href="{% url 'forgot_password' %}" class="text-primary text-muted-small">
+    Forgot password?
+</a>
+
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            Login
+                        </button>
+                    </div>
+
+                    <!-- Home Button -->
+                    <div class="d-grid mt-3">
+                        <a href="{% url 'home' %}" class="btn btn-secondary">
+                            Go to Homepage
+                        </a>
+                    </div>
+
+                    <!-- Register -->
+                    <p class="text-center mt-4 text-muted-small">
+                        Don’t have an account?
+                        <a href="{% url 'register' %}">Register</a>
+                    </p>
+
+                </form>
+                <!-- End Login Card -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script> 
+    setTimeout(function () {
+        document.querySelectorAll(".alert").forEach(function(alert) {
+            alert.style.display = "none";
+        });
+    }, 3000);
+</script>
+
+</body>
+</html>

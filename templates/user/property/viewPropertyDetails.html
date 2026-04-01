@@ -1,0 +1,180 @@
+{% extends 'user/userLayout.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+<div class="container my-5">
+    <!-- ================= PROPERTY HEADER ================= -->
+    <div class="card shadow-sm mb-4">
+        <div class="row g-0">
+            <!-- Property Image -->
+            <div class="col-md-5">
+                {% if property.property_image %}
+                <img src="{% get_media_prefix %}{{ property.property_image }}" class="img-fluid w-100 h-100"
+                    style="object-fit: cover;" />
+                {% else %}
+                <img src="{% static 'images/no-image.png' %}" class="img-fluid w-100 h-100" />
+                {% endif %}
+            </div>
+
+            <!-- Property Info -->
+            <div class="col-md-7">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">{{ property.property_status }}</span>
+
+                    <h3 class="fw-bold">{{ property.property_name }}</h3>
+
+                    <p class="text-muted mb-2">📍 {{ property.property_loc }}, {{ property.property_district }}, Kerala
+                    </p>
+
+                    <h4 class="fw-bold text-success mt-3 mb-1">₹ {{ property.price_listed|intcomma }} <small class="text-muted fs-6">Asking Price</small></h4>
+
+                    {% if property.price_predicted %}
+                    <div class="alert alert-info border-info d-inline-block py-2 px-3 mt-2 mb-0">
+                        <strong>🤖 AI Market Estimate:</strong> ₹ {{ property.price_predicted|floatformat:0|intcomma }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= PROPERTY HIGHLIGHTS ================= -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Area</h6>
+                    <h5 class="fw-bold">{{ property.property_area }} sq.ft</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Bedrooms</h6>
+                    <h5 class="fw-bold">{{ property.no_of_bed_rooms }}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">District</h6>
+                    <h5 class="fw-bold">{{ property.property_district }}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Status</h6>
+                    <h5 class="fw-bold text-primary">{{ property.property_status }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= DESCRIPTION ================= -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="fw-semibold mb-2">Property Description</h5>
+            <p class="text-muted">{{ property.property_desc }}</p>
+        </div>
+    </div>
+
+    <!-- ================= LOCATION DETAILS ================= -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="fw-semibold mb-2">Location Details</h5>
+
+            <p class="mb-1">
+                <strong>Address:</strong>
+                {{ property.property_loc }}, {{ property.property_district }}, Kerala
+            </p>
+
+            <p class="mb-0">
+                <strong>Coordinates:</strong>
+                {{ property.property_latitude }},
+                {{ property.property_longitude }}
+            </p>
+        </div>
+    </div>
+    <!-- ================= BID SECTION ================= -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="fw-semibold mb-3">Property Actions</h5>
+
+            {% if property.property_status == 'Sold' %}
+            <div class="alert alert-danger">
+                This property has already been sold.
+            </div>
+
+            {% else %}
+
+            {% if not prequest %}
+            <!-- REQUEST -->
+            <form method="post" action="{% url 'sendPropertyRequest' %}">
+                {% csrf_token %}
+                <input type="hidden" name="pid" value="{{ property.property_id }}">
+                <button class="btn btn-outline-primary">
+                    Request to Buy
+                </button>
+            </form>
+
+            {% elif prequest and not bid %}
+            <!-- PLACE BID -->
+            <div class="alert alert-info mb-3">
+                Request approved. You can now place your bid.
+            </div>
+
+            <form method="post" action="{% url 'placeBid' %}">
+                {% csrf_token %}
+                <input type="hidden" name="pid" value="{{ property.property_id }}">
+
+                <label class="form-label">Enter Your Offer (₹)</label>
+                <input type="number" name="bid_amount" class="form-control" min="{{ property.price_listed }}" required>
+
+                <button class="btn btn-success mt-2">
+                    Place Bid
+                </button>
+            </form>
+
+            {% elif bid %}
+            <!-- SHOW BID AMOUNT -->
+            <div class="alert alert-success mb-0">
+                ✅ <strong>Your Bid Amount:</strong> ₹ {{ bid.bid_amount }}
+            </div>
+            <div class="card mt-3 border-primary">
+                <div class="card-body text-center">
+
+                    {% if broker %}
+                    <h6 class="mb-2">Need more details?</h6>
+                    <a href="{% url 'openChat' bid.bid_id %}" class="btn btn-primary">
+                        💬 Chat with {{ broker.broker_name }}
+                    </a>
+                    {% else %}
+                    <h6 class="text-secondary mb-1">
+                        <i class="ti ti-clock"></i> A Broker will be allotted soon.
+                    </h6>
+                    <small class="text-muted">Chat will unlock automatically once assigned.</small>
+                    {% endif %}
+
+                </div>
+            </div>
+
+            {% endif %}
+
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- ================= CHAT SECTION ================= -->
+
+
+</div>
+</div>
+</div>
+{% endblock %}
