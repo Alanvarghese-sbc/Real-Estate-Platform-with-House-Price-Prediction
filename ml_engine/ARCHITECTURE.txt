@@ -1,0 +1,162 @@
+"""
+ML House Price Prediction System - Architecture Diagram
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         KAGGLE DATASET                                   │
+│                    (house_prices.csv)                                    │
+│   District | Location | Area | Bedrooms | Price                         │
+│   ─────────────────────────────────────────────────                     │
+│   Ernakulam| Kochi    | 2000 | 3        | 9500000                       │
+│   Trivandrum| Pattom  | 1500 | 2        | 6800000                       │
+│   ...                                                                    │
+└─────────────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    TRAINING PHASE (One-time)                             │
+│                                                                          │
+│   python ml_engine/train_model.py                                       │
+│   ────────────────────────────────────────────                          │
+│   1. Load CSV dataset                                                   │
+│   2. Encode categorical features (District, Location)                   │
+│   3. Train Random Forest model                                          │
+│   4. Evaluate: 93.97% accuracy                                          │
+│   5. Save model to ml_engine/models/                                    │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    TRAINED MODEL FILES                                   │
+│                                                                          │
+│   ml_engine/models/                                                     │
+│   ├── house_price_model.pkl    (2.5 MB)                                │
+│   ├── encoders.pkl              (Label encoders)                        │
+│   └── metrics.pkl               (Performance metrics)                   │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    PREDICTION PHASE (Runtime)                            │
+│                                                                          │
+│   USER ADDS PROPERTY                                                    │
+│   ────────────────────────────────────────────                          │
+│   1. User fills form:                                                   │
+│      - District: Ernakulam                                              │
+│      - Area: 2000 sq ft                                                 │
+│      - Bedrooms: 3                                                      │
+│      - Location: Kochi                                                  │
+│                                                                          │
+│   2. Django: user/views.py → saveProperty()                             │
+│      ↓                                                                   │
+│   3. ML Prediction:                                                     │
+│      predict_house_price(                                               │
+│          district="Ernakulam",                                          │
+│          area=2000,                                                     │
+│          bedrooms=3,                                                    │
+│          location="Kochi"                                               │
+│      )                                                                  │
+│      ↓                                                                   │
+│   4. Model loads (cached after first use)                               │
+│      ↓                                                                   │
+│   5. Features prepared:                                                 │
+│      [District_encoded, Location_encoded, 2000, 3]                      │
+│      ↓                                                                   │
+│   6. Random Forest predicts: Rs. 9,543,991                              │
+│      ↓                                                                   │
+│   7. Save to database:                                                  │
+│      price_listed = 10000000 (user input)                               │
+│      price_predicted = 9543991 (AI prediction)                          │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    BROKER VIEWS PROPERTY                                 │
+│                                                                          │
+│   templates/broker/propertyBids.html                                    │
+│   ────────────────────────────────────────────                          │
+│                                                                          │
+│   ┌────────────────────────────────────────────────────┐               │
+│   │  Property Bids                                      │               │
+│   ├────────┬──────────┬─────────────────┬──────────────┤               │
+│   │ User   │ Bid Amt  │ Predicted Amt   │ Date         │               │
+│   ├────────┼──────────┼─────────────────┼──────────────┤               │
+│   │ John   │ 9,800,000│ Rs. 9,543,991   │ 16-02-2026   │               │
+│   │        │          │ 🤖 AI           │              │               │
+│   ├────────┼──────────┼─────────────────┼──────────────┤               │
+│   │ Sarah  │ 9,500,000│ Rs. 9,543,991   │ 15-02-2026   │               │
+│   │        │          │ 🤖 AI           │              │               │
+│   └────────┴──────────┴─────────────────┴──────────────┘               │
+│                                                                          │
+│   Broker can see:                                                       │
+│   - User's bid amount                                                   │
+│   - AI predicted price (with blue badge)                                │
+│   - Compare bids with AI prediction                                     │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+                         FEATURE IMPORTANCE
+═══════════════════════════════════════════════════════════════════════════
+
+    Area (sq ft)    ████████████████████████████████████████ 84.2%
+    Location        ████████ 9.0%
+    District        ████ 5.0%
+    Bedrooms        █ 1.8%
+
+═══════════════════════════════════════════════════════════════════════════
+                         SYSTEM COMPONENTS
+═══════════════════════════════════════════════════════════════════════════
+
+┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐
+│  Data Layer      │   │  ML Layer        │   │  Application     │
+│                  │   │                  │   │  Layer           │
+│  - CSV Dataset   │   │  - train_model   │   │  - Django Views  │
+│  - 1000 records  │──▶│  - predict.py    │──▶│  - Templates     │
+│  - 4 features    │   │  - Random Forest │   │  - Database      │
+│                  │   │  - 93.97% acc    │   │                  │
+└──────────────────┘   └──────────────────┘   └──────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+                         PERFORMANCE METRICS
+═══════════════════════════════════════════════════════════════════════════
+
+Model Size:         2.5 MB
+Loading Time:       ~500ms (first time, then cached)
+Prediction Time:    ~10ms per prediction
+Memory Usage:       ~50MB
+Training Time:      ~2 seconds (1000 records)
+Accuracy (R²):      93.97%
+
+═══════════════════════════════════════════════════════════════════════════
+                         USAGE FLOW
+═══════════════════════════════════════════════════════════════════════════
+
+User Journey:
+1. User logs in
+2. Clicks "Add Property"
+3. Fills form (District, Area, Bedrooms, Location, Price)
+4. Submits form
+5. ✨ ML automatically predicts price (invisible to user)
+6. Property saved with both listed and predicted prices
+
+Broker Journey:
+1. Broker logs in
+2. Views property bids
+3. Sees AI predicted price alongside user bids
+4. Makes informed decision based on:
+   - User bid amounts
+   - AI predicted fair price
+   - Market conditions
+
+═══════════════════════════════════════════════════════════════════════════
+                         TECHNOLOGY STACK
+═══════════════════════════════════════════════════════════════════════════
+
+Backend:        Django 4.2.5
+ML Framework:   scikit-learn 1.8.0
+Algorithm:      Random Forest Regressor
+Data:           pandas 2.3.3, numpy 2.4.1
+Database:       MySQL (price_predicted field)
+Frontend:       Bootstrap 5 (AI badge display)
+
+═══════════════════════════════════════════════════════════════════════════
+"""

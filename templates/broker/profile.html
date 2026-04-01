@@ -1,0 +1,133 @@
+{% extends 'broker/brokerLayout.html' %}
+{% block content %}
+
+<div class="container mt-4">
+
+  <h4>Broker Profile</h4>
+
+  <div class="row">
+
+    <!-- Profile Image Section -->
+    <div class="col-md-3 text-center">
+
+      {% if ulist.profile_image %}
+
+      <img src="/media/broker_profile_images/{{ulist.profile_image}}" class="img-fluid rounded-circle mb-3"
+        style="width:150px;height:150px;object-fit:cover;">
+
+
+      {% else %}
+
+      <img src="/static/images/default-user.png" class="img-fluid rounded-circle mb-3"
+        style="width:150px;height:150px;object-fit:cover;">
+
+      {% endif %}
+
+    </div>
+
+
+    <!-- Profile Details -->
+    <div class="col-md-9">
+
+      <table class="table">
+
+        <tr>
+          <td><strong>Full Name</strong></td>
+          <td>{{ulist.broker_name}}</td>
+        </tr>
+
+        <tr>
+          <td><strong>Email</strong></td>
+          <td>{{ulist.broker_email}}</td>
+        </tr>
+
+        <tr>
+          <td><strong>Gender</strong></td>
+          <td>{{ulist.broker_gender}}</td>
+        </tr>
+
+        <tr>
+          <td><strong>Phone</strong></td>
+          <td>{{ulist.broker_phone}}</td>
+        </tr>
+
+        <tr>
+          <td><strong>District</strong></td>
+          <td>{{ulist.broker_district}}</td>
+        </tr>
+
+      </table>
+
+      <a href="{% url 'editBrokerProfile' ulist.broker_id %}" class="btn btn-success">
+        Edit Profile
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% comment %}
+{% extends 'broker/brokerLayout.html' %}
+{% block content %}
+<div class="table-responsive mt-4">
+  <form method='post'>
+    {% csrf_token %}
+    <table class="table mb-0 text-nowrap varient-table align-middle fs-3">
+      <div class="d-md-flex align-items-center">
+        <div>
+          <h4 class="card-title">Profile</h4>
+        </div>
+      </div>
+      <tbody>
+
+
+        <tr>
+          <td class="px-0"><strong>Full Name</strong></td>
+          <td class="px-0" colspan="3">
+            {{ulist.broker_name}}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="px-0"><strong>Email</strong></td>
+          <td class="px-0" colspan="3">
+            {{ulist.broker_email}}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="px-0"><strong>Gender</strong></td>
+          <td class="px-0" colspan="3">
+            {{ulist.broker_gender}}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="px-0"><strong>Phone</strong></td>
+          <td class="px-0" colspan="3">
+            {{ulist.broker_phone}}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="px-0"><strong>District</strong></td>
+          <td class="px-0" colspan="3">
+            {{ulist.broker_district}}
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="4" class="text-end">
+            <a href="{% url 'editBrokerProfile' ulist.broker_id %}" class="btn btn-sm btn-success me-2">
+              Edit
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+{% endblock %} {% endcomment %}

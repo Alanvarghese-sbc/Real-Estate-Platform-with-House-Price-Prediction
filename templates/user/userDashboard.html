@@ -1,0 +1,141 @@
+{% extends 'user/userLayout.html' %}
+{% block content %}
+
+<style>
+  .hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+  }
+</style>
+
+<div class="col-lg-4">
+  <div class="card overflow-hidden shadow-sm hover-lift border-0">
+    <div class="card-body pb-0">
+      <div class="d-flex align-items-start">
+        <div>
+          <h4 class="card-title">Seller Stats</h4>
+          <p class="card-subtitle">Your Property Sales Overview</p>
+        </div>
+      </div>
+      <div class="mt-4 pb-3 d-flex align-items-center">
+        <span class="btn btn-primary rounded-circle round-48 hstack justify-content-center">
+          <i class="ti ti-home fs-6"></i>
+        </span>
+        <div class="ms-3">
+          <h5 class="mb-0 fw-bolder fs-4">Listed Properties</h5>
+          <span class="text-muted fs-3">{{ listed_count }}</span>
+        </div>
+      </div>
+      <div class="py-3 d-flex align-items-center">
+        <span class="btn btn-success rounded-circle round-48 hstack justify-content-center">
+          <i class="ti ti-cash fs-6"></i>
+        </span>
+        <div class="ms-3">
+          <h5 class="mb-0 fw-bolder fs-4">Total Sales</h5>
+          <span class="text-muted fs-3">₹{{ total_sales|default:"0" }}</span>
+        </div>
+      </div>
+      <div class="py-3 d-flex align-items-center">
+        <span class="btn btn-warning rounded-circle round-48 hstack justify-content-center">
+          <i class="ti ti-message fs-6"></i>
+        </span>
+        <div class="ms-3">
+          <h5 class="mb-0 fw-bolder fs-4">Enquiries Received</h5>
+          <span class="text-muted fs-3">{{ enquiries_received }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-4">
+  <div class="card overflow-hidden shadow-sm hover-lift border-0">
+    <div class="card-body pb-0">
+      <div class="d-flex align-items-start">
+        <div>
+          <h4 class="card-title">Buyer Stats</h4>
+          <p class="card-subtitle">Your Property Buying Overview</p>
+        </div>
+      </div>
+      <div class="mt-4 pb-3 d-flex align-items-center">
+        <span class="btn btn-info rounded-circle round-48 hstack justify-content-center">
+          <i class="ti ti-search fs-6"></i>
+        </span>
+        <div class="ms-3">
+          <h5 class="mb-0 fw-bolder fs-4">Enquiries Made</h5>
+          <span class="text-muted fs-3">{{ my_requests_count }}</span>
+        </div>
+      </div>
+      <div class="py-3 text-center">
+        <a href="{% url 'myEnquiries' %}" class="btn btn-outline-info w-100 mb-3">View My Enquiries</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-12">
+  <div class="card shadow-sm border-0">
+    <div class="card-body">
+
+      <div class="d-md-flex align-items-center">
+        <div>
+          <h4 class="card-title">My Properties</h4>
+          <p class="card-subtitle">Manage your house listings</p>
+        </div>
+      </div>
+
+      <div class="table-responsive mt-4">
+        <table class="table mb-0 text-nowrap varient-table align-middle fs-3">
+          <thead>
+            <tr>
+              <th class="text-muted">Property ID</th>
+              <th class="text-muted">House Name</th>
+              <th class="text-muted">District</th>
+              <th class="text-muted">Price</th>
+              <th class="text-muted text-end">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for p in properties %}
+            <tr>
+              <td>{{ p.property_id }}</td>
+              <td>{{ p.property_name }}</td>
+              <td>{{ p.property_district }}</td>
+              <td>₹{{ p.price_listed }}</td>
+              <td class="text-end">
+                <a class="btn btn-sm btn-primary" href="{% url 'editProperty' p.property_id %}">Edit</a>
+                <a class="btn btn-sm btn-danger" href="{% url 'deleteProperty' p.property_id %}"
+                  onclick="return confirm('Are you sure?')">Delete</a>
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="5" class="text-center py-5">
+                 <div class="d-flex flex-column align-items-center justify-content-center">
+                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <i class="ti ti-home-off text-muted" style="font-size: 2.5rem;"></i>
+                    </div>
+                    <h5 class="fw-semibold text-dark">No Properties Listed</h5>
+                    <p class="text-muted">You haven't listed any houses for sale yet.</p>
+                 </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+
+        </table>
+      </div>
+
+      <div class="mt-3 text-end">
+        <a href="{% url 'addProperty' %}" class="btn btn-primary">Add New Property</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

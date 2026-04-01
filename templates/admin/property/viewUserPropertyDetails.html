@@ -1,0 +1,75 @@
+{% extends 'admin/adminLayout.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+<div class="px-2 pt-2 ">
+  <div class="row">
+
+    <!-- LEFT : IMAGE -->
+    <div class="col-lg-5">
+      <div class="card shadow-sm border-0">
+        {% if p.property_image %}
+        <img src="{% get_media_prefix %}/{{ p.property_image }}" class="img-fluid rounded"
+          style="height:350px; object-fit:cover;">
+        {% else %}
+        <img src="{% static 'images/no-image.png' %}" class="img-fluid rounded">
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- RIGHT : DETAILS -->
+    <div class="col-lg-7">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+
+          <h4 class="fw-bold mb-3">{{ p.property_name }}</h4>
+
+          <h5 class="text-success mb-3">
+            ₹ {{ p.price_listed|intcomma }}
+          </h5>
+          {% if p.price_predicted %}
+          <div class="alert alert-info mb-3">
+            <strong>🤖 AI Predicted Price:</strong> ₹ {{ p.price_predicted|intcomma }}
+          </div>
+          {% endif %}
+
+          <p class="text-muted mb-2">
+            📍 {{ p.property_loc }}, {{ p.property_district }}
+          </p>
+
+          <hr>
+
+          <div class="row mb-2">
+            <div class="col-6"><strong>Bedrooms:</strong></div>
+            <div class="col-6">{{ p.no_of_bed_rooms }}</div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-6"><strong>Area:</strong></div>
+            <div class="col-6">{{ p.property_area }} sq.ft</div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-6"><strong>Status:</strong></div>
+            <div class="col-6">
+              <span class="badge bg-info">{{ p.property_status }}</span>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-6"><strong>Description:</strong></div>
+            <div class="col-12 text-muted mt-1">
+              {{ p.property_desc }}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

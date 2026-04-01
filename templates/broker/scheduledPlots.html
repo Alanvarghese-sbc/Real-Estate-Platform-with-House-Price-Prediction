@@ -1,0 +1,36 @@
+{% extends 'broker/brokerLayout.html' %}
+{% block content %}
+<h4 class="fw-bold mb-3">My Scheduled Plots</h4>
+
+{% if plist %}
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Property Name</th>
+        <th>Property Location</th>
+        <th>Owner Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for property in plist %}
+      <tr>
+        <td>{{ property.property_name }}</td>
+        <td>{{ property.property_loc }}</td>
+        <td>
+          <a href=""
+            >{{property.full_name}}
+          </a>
+        </td>
+        <td>
+          <a href="{% url 'propertyDetails' property.property_id %}" class="btn btn-outline-primary btn-sm">View Details</a>
+          <a href="{% url 'brokerPropertyBids' property.property_id %}" class="btn btn-primary btn-sm">View Requests & Bids</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p class="text-muted">No plots scheduled for you.</p>
+{% endif %}
+{% endblock %}
